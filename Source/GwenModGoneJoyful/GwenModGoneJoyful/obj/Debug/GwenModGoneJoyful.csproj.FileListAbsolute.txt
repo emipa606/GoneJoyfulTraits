@@ -1,0 +1,7 @@
+E:\Steam\SteamApps\common\RimWorld\Mods\0 My NewTrait  Mod\Source\GwenModGoneJoyful\GwenModGoneJoyful\bin\Debug\GwenModGoneJoyful.dll
+E:\Steam\SteamApps\common\RimWorld\Mods\0 My NewTrait  Mod\Source\GwenModGoneJoyful\GwenModGoneJoyful\bin\Debug\GwenModGoneJoyful.pdb
+E:\Steam\SteamApps\common\RimWorld\Mods\0 My NewTrait  Mod\Source\GwenModGoneJoyful\GwenModGoneJoyful\obj\Debug\GwenModGoneJoyful.csproj.CoreCompileInputs.cache
+E:\Steam\SteamApps\common\RimWorld\Mods\0 My NewTrait  Mod\Source\GwenModGoneJoyful\GwenModGoneJoyful\obj\Debug\GwenModGoneJoyful.dll
+E:\Steam\SteamApps\common\RimWorld\Mods\0 My NewTrait  Mod\Source\GwenModGoneJoyful\GwenModGoneJoyful\obj\Debug\GwenModGoneJoyful.pdb
+E:\Steam\SteamApps\common\RimWorld\Mods\0 My NewTrait  Mod\Assemblies\GwenModGoneJoyful.dll
+E:\Steam\SteamApps\common\RimWorld\Mods\0 My NewTrait  Mod\Assemblies\GwenModGoneJoyful.pdb

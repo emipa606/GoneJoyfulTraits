@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TraitDef>
+    <defName>GBKT_Aquaphile</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Aquaphile</label>
+        <description>{PAWN_nameDef} loves being wet. They have trained to survive in wet climates better than anyone else.{PAWN_pronoun} can wade through water at a dead sprint, and can aim through sheets of rain like it was a clear day.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_SkyGazer</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Sky Gazer</label>
+        <description>For whatever reason, where {PAWN_nameDef} was before, they missed out on seeing big blue skies - and now nothing brings them more joy than to see the wide open heavens above them.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_CareGiver</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Care Giver</label>
+        <description>{PAWN_nameDef} derives confidence from taking care of others, and bringing a sick friend happiness is what brings them joy in turn.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+    <requiredWorkTags>
+      <li>Social</li>
+      <li>Caring</li>
+    </requiredWorkTags>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_Explorer</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Explorer</label>
+        <description>{PAWN_nameDef} constantly craves new experiences and new things to see. {PAWN_pronoun} lives for the sole purpose of seeking that excitement anywhere they can find it.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<MoveSpeed>1.00</MoveSpeed>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_Homebody</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Homebody</label>
+        <description>{PAWN_nameDef} is happiest in their familiar local environs and surroundings. {PAWN_pronoun} additionally takes pride in keeping their space "just so", as this maintains its familiarity. To them, living at home is best.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<MentalBreakThreshold>0.18</MentalBreakThreshold>
+			<FixBrokenDownBuildingSuccessChance>0.10</FixBrokenDownBuildingSuccessChance>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+    <requiredWorkTags>
+      <li>Cleaning</li>
+      <li>ManualDumb</li>
+    </requiredWorkTags>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_Energetic</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Energetic</label>
+        <description> {PAWN_nameDef} rarely sits still. {PAWN_pronoun} tires less easily, but also needs more food to fuel their energy needs.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_DirtLover</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Dirt Aficionado</label>
+        <description>{PAWN_nameDef} loves the feeling of dirt between their toes.  And fingers.  And teeth.  {PAWN_pronoun} enjoys the appearance and taste of raw nature in all its glorious mess, and will accidentally spread some of that raw mess wherever they go.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<PlantWorkSpeed>0.3</PlantWorkSpeed>
+			<MiningYield>0.3</MiningYield>
+			<SmoothingSpeed>0.3</SmoothingSpeed>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+    <requiredWorkTags>
+      <li>PlantWork</li>
+      <li>ManualDumb</li>
+      <li>ManualSkilled</li>
+    </requiredWorkTags>
+    <disabledWorkTags>
+		<li>Cleaning</li>
+	</disabledWorkTags>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_Dreamer</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Dreamer</label>
+        <description>{PAWN_nameDef}'s best refuge is in the privacy of their mind. When discouraged, they tend to retreat into their own little world, and may actively seek such escape to their thoughts and their beds.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_Gamer</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Gamer</label>
+        <description>For {PAWN_nameDef}, turning everything into a game activates their brain and makes any task all the more enticing.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<GlobalLearningFactor>-0.10</GlobalLearningFactor>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_Meditative</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Meditative</label>
+        <description>PAWN_nameDef} finds their best source of calm in their own psyche.  {PAWN_pronoun}  devotes time to sit with their own thoughts, often reducing social contact to better think.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_Socialite</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Socialite</label>
+        <description>Charismatic and active, {PAWN_nameDef} gets the most motivation from interacting with and collaborating with others. Getting so involved in the lives of others has benefits... and also downsides to having that kind of visibility. </description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+    <requiredWorkTags>
+      <li>Social</li>
+      <li>Caring</li>
+    </requiredWorkTags>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_CouchPotato</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Couch Potato</label>
+        <description>{PAWN_nameDef} prefers sitting and passively looking at works of art, preferably television In fact, they get so into what they are viewing its like their metabolism slows down.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+  </TraitDef>
+
+  <TraitDef>
+    <defName>GBKT_Foodie</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Foodie</label>
+        <description>{PAWN_nameDef} derives joy from every exciting morsel of a meal they are eating. Savoring every bite is important to them.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<EatingSpeed>-0.50</EatingSpeed>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+  </TraitDef>
+  
+  <TraitDef>
+    <defName>GBKT_BattleThrill</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Battle Thrill</label>
+        <description> {PAWN_nameDef} gets a thrill from being in the thick of battle. Nothing else is quite like it. They get some enjoyment out of honing their battle skills.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+        </statOffsets>
+		<socialFightChanceFactor>4</socialFightChanceFactor>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+  </TraitDef>
+  
+  <TraitDef>
+    <defName>GBKT_SunBather</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Sun Bather</label>
+        <description>{PAWN_nameDef} enjoys being out in the sun and the effect it has on their skin. They are gonna soak up the sun!</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<ComfyTemperatureMin>5</ComfyTemperatureMin>
+			<ComfyTemperatureMax>5</ComfyTemperatureMax>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+  </TraitDef>
+  
+  <TraitDef>
+    <defName>GBKT_SnowBunny</defName>
+    <commonality>1</commonality>
+    <degreeDatas>
+      <li>
+        <label>Snow Bunny</label>
+        <description>{PAWN_nameDef} loves winter and all things winter-related.</description>
+		<statFactors>
+			<!-- Optional. Modifies pawn stats by multiplier -->
+		</statFactors>
+        <statOffsets>
+			<ComfyTemperatureMin>-5</ComfyTemperatureMin>
+			<ComfyTemperatureMax>-5</ComfyTemperatureMax>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<!-- <li>GWT_Simple</li> -->
+		<!-- <li>GWT_ColdResistant</li> -->
+		<!-- <li>GWT_HeatResistant</li> -->
+	</conflictingTraits>
+  </TraitDef>
+  
+</Defs>
