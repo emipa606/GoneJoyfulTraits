@@ -16,9 +16,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
   </TraitDef>
 
@@ -37,9 +49,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
   </TraitDef>
 
@@ -58,9 +82,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
     <requiredWorkTags>
       <li>Social</li>
@@ -84,9 +120,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
   </TraitDef>
 
@@ -107,9 +155,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
     <requiredWorkTags>
       <li>Cleaning</li>
@@ -132,9 +192,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
   </TraitDef>
 
@@ -156,9 +228,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
     <requiredWorkTags>
       <li>PlantWork</li>
@@ -185,9 +269,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
   </TraitDef>
 
@@ -207,9 +303,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
   </TraitDef>
 
@@ -228,9 +336,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
   </TraitDef>
 
@@ -249,9 +369,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
     <requiredWorkTags>
       <li>Social</li>
@@ -274,9 +406,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
   </TraitDef>
 
@@ -296,9 +440,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
   </TraitDef>
   
@@ -318,9 +474,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_SunBather</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
   </TraitDef>
   
@@ -341,9 +509,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SnowBunny</li>
 	</conflictingTraits>
   </TraitDef>
   
@@ -364,9 +544,21 @@
       </li>
     </degreeDatas>
 	<conflictingTraits>
-		<!-- <li>GWT_Simple</li> -->
-		<!-- <li>GWT_ColdResistant</li> -->
-		<!-- <li>GWT_HeatResistant</li> -->
+		<li>GBKT_Aquaphile</li>
+		<li>GBKT_SkyGazer</li>
+		<li>GBKT_CareGiver</li>
+		<li>GBKT_Explorer</li>
+		<li>GBKT_Homebody</li>
+		<li>GBKT_Energetic</li>
+		<li>GBKT_DirtLover</li>
+		<li>GBKT_Dreamer</li>
+		<li>GBKT_Gamer</li>
+		<li>GBKT_Meditative</li>
+		<li>GBKT_Socialite</li>
+		<li>GBKT_CouchPotato</li>
+		<li>GBKT_Foodie</li>
+		<li>GBKT_BattleThrill</li>
+		<li>GBKT_SunBather</li>
 	</conflictingTraits>
   </TraitDef>
   

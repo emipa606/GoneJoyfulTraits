@@ -47,10 +47,10 @@ namespace GBKT_Main
                     //Log.Error("this runs");
                     for (int i = 0; i < GBKT_TraitDef.Length; i++)
                     {
-                        //SKY GAZER
                         bool? hasTrait = pawn.story?.traits?.HasTrait(GBKT_TraitDef[i]);
                         if (hasTrait == true)
                         {
+                            //SKY GAZER
                             if (GBKT_TraitDef[i] == GBTK_DefinitionTypes.GBTK_DefinitionTypes_Traits.GBKT_SkyGazer)
                             {
                                 bool IsPawnRoofed = pawn.Position.Roofed(pawn.Map);
@@ -61,36 +61,26 @@ namespace GBKT_Main
                                     bool tryThisHediff = HediffGiverUtility.TryApply(pawn, GBTK_DefinitionTypes.GBTK_DefinitionTypes_Hediff.GBKT_SkyGazerSeesSky, GBKT_BodyPartDef);
                                 }
                             }
+                            //CARE GIVER
                             foreach (Pawn VisitedPAwn in pawns)
                             {
-                                //CARE GIVER
                                 string PawnsCurrentJob = pawn.CurJobDef.ToString();
-                                Room room = pawn.GetRoom(RegionType.Set_Passable);
                                 if (GBKT_TraitDef[i] == GBTK_DefinitionTypes.GBTK_DefinitionTypes_Traits.GBKT_CareGiver)
                                 {
-                                    if (PawnsCurrentJob == "VisitSickPawn")
+                                    if (PawnsCurrentJob == "VisitSickPawn" || PawnsCurrentJob == "TendPatient" || PawnsCurrentJob == "FeedPatient")
                                     {
                                         if(pawn.CurJob.targetA == VisitedPAwn)
                                         {
                                             bool tryThisHediff = HediffGiverUtility.TryApply(VisitedPAwn, GBTK_DefinitionTypes.GBTK_DefinitionTypes_Hediff.GBKT_CareGiverVisited, GBKT_BodyPartDef);
+                                            VisitedPAwn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes.GBTK_DefinitionTypes_JoyDeff.Social);
                                         }
                                     }
-                                }
-                                if (room.Role == RoomRoleDefOf.Hospital)
-                                {
-                                    bool tryThisHediff = HediffGiverUtility.TryApply(pawn, GBTK_DefinitionTypes.GBTK_DefinitionTypes_Hediff.GBKT_CareGiverInHospitalRoom, GBKT_BodyPartDef);
                                 }
                                 if (PawnsCurrentJob == "TendPatient")
                                 {
                                     bool tryThisHediff = HediffGiverUtility.TryApply(pawn, GBTK_DefinitionTypes.GBTK_DefinitionTypes_Hediff.GBKT_CareGiverTendedAPatient, GBKT_BodyPartDef);
                                 }
-
                             }
-                            //CAREGIVER
-                            if (GBKT_TraitDef[i] == GBTK_DefinitionTypes.GBTK_DefinitionTypes_Traits.GBKT_CareGiver)
-                            {
-                                
-                            } 
                             //AQUAPHILE
                             if (GBKT_TraitDef[i] == GBTK_DefinitionTypes.GBTK_DefinitionTypes_Traits.GBKT_Aquaphile)
                             {

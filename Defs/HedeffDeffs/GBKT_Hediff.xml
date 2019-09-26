@@ -56,8 +56,8 @@
     <HediffDef ParentName="TraitBuffBase">
         <defName>GBKT_CareGiverVisited</defName>
         <hediffClass>HediffWithComps</hediffClass>
-        <label>A Nurse is Near</label>
-        <labelNoun>A Near by Nurse</labelNoun>
+        <label>Visited By A Caregiver</label>
+        <labelNoun>A Caregiver Visited</labelNoun>
         <scenarioCanAdd>true</scenarioCanAdd>
         <isBad>false</isBad>
         <comps>
@@ -73,32 +73,6 @@
                 <statOffsets>
 					<MentalBreakThreshold>-0.10</MentalBreakThreshold>
                 </statOffsets>
-            </li>
-        </stages>
-    </HediffDef>
-    <HediffDef ParentName="TraitBuffBase">
-        <defName>GBKT_CareGiverInHospitalRoom</defName>
-        <hediffClass>HediffWithComps</hediffClass>
-        <label>Care Giver In Hospital Room</label>
-        <labelNoun>A Care Giver Is In A Hospital Room</labelNoun>
-        <scenarioCanAdd>false</scenarioCanAdd>
-        <isBad>false</isBad>
-        <comps>
-        <li Class="HediffCompProperties_Disappears">
-            <disappearsAfterTicks>
-                <min>100</min>
-                <max>100</max>
-            </disappearsAfterTicks>
-        </li>
-        </comps>
-        <stages>
-            <li>
-                <statOffsets>
-					<MedicalSurgerySuccessChance>0.2</MedicalSurgerySuccessChance>
-					<MedicalTendQuality>0.2</MedicalTendQuality>
-					<MedicalOperationSpeed>0.2</MedicalOperationSpeed>
-					<MedicalTendSpeed>0.2</MedicalTendSpeed>
-                </statOffsets>			
             </li>
         </stages>
     </HediffDef>

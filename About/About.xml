@@ -9,15 +9,15 @@
         <li>1.0</li>
     </supportedVersions>
   <description>This mod adds 16 traits that affect how colonists enjoy the world around them.
-This mod is in an early phase. i tested as extensively as I could so bug reports are valued.
+This mod is in an early phase. I tested as extensively as I could so bug reports are valued as well as balance feedback.
 used the buttons from https://opengameart.org/content/gui-buttons-0 as the background for the below images
-
+You have permission to translate the mod. I am willing to incorporate patches you make for other mods into this mod if you send me the code I need.
  [h1]SPECIAL THANKS[/h1]
  [url=https://ludeon.com/forums/index.php?topic=49129.0] LoonyLadle[/url] for helping me get the rimworld c# coding environment setup
  [url=https://steamcommunity.com/id/moloyHasArc/myworkshopfiles/?appid=294100] moloy559[/url] for helping me get my code base started
  [url=https://steamcommunity.com/id/eBlairGames/myworkshopfiles/?appid=294100] eBlair[/url] for coding up the required mod to allow joys altered by traits
  [h1]LOAD ORDER![/h1]
- GWEN THOUGHT PATCH (near top of load order. i made it separate so the game wouldn't complain about doubled nullified fields)
+ GWEN DEFINITION PATCHS (near top of load order. I made it separate so the game wouldn't complain about doubled nullified fields)
  any mods that alter pawn thoughts such as psychology
  THIS (anywhere you'd normally put trait mods)
  [h1]SUPPORT THE MOD![/h1]
@@ -27,8 +27,9 @@ You can support the mod by commenting on balance, making bug reports, and offeri
 [url=https://discord.gg/WJmGCzH]You can also join my discord server to receive live progress reports or give live feedback.[img]https://i.imgur.com/0oTSG7x.png[/img][/url]
 
 [h1]TO DO[/h1]
-GIT HUB LINK SOON AS I MAKE A REPOSITORY
-ABILITY TO TOGGLE OFF UNWATNED TRAITS FROM APPEAERING
+Ability to toggle off unwanted traits from appearing
+Add 4 more traits (i cap each mod at 20 traits)
+Balance
 </description>
 
 </ModMetaData>

@@ -33,7 +33,6 @@ namespace GBTK_DefinitionTypes
     {
         public static HediffDef GBKT_TestHediff;
         public static HediffDef GBKT_CareGiverTendedAPatient;
-        public static HediffDef GBKT_CareGiverInHospitalRoom;
         public static HediffDef GBKT_CareGiverVisited;
         public static HediffDef GBKT_SkyGazerSeesSky;
         public static HediffDef GBKT_Aquaphile_Is_Wet;
@@ -65,6 +64,7 @@ namespace GBTK_DefinitionTypes
     {
         public static JoyKindDef Meditative;
         public static JoyKindDef Gluttonous;
+        public static JoyKindDef Social;
     }
     [DefOf]
     public static class GBTK_DefinitionTypes_JobDeff
