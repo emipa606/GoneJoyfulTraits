@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThoughtDef>
+    <defName>GBKT_SkyGazerThought</defName>
+    <workerClass>GBKT_ThoughtWorkers.ThoughtWorker_GBKTSkyGazer</workerClass>
+    <requiredTraits>
+      <li>GBKT_SkyGazer</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Happy Sky Gazer</label>
+        <description>I can clearly see the sky. This is great.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>Happy Sky Gazer</label>
+        <description>I can clearly see the sky. This is great.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>GBKT_CareGiverInAHospitalRoom</defName>
+    <workerClass>GBKT_ThoughtWorkers.ThoughtWorker_CareGiverInAHospitalRoom</workerClass>
+    <requiredTraits>
+      <li>GBKT_CareGiver</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Care Giver In A Hospital Room</label>
+        <description>I love being where I can help most efficiently. This is great.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>CareGiverInAHospitalRoom</label>
+        <description>CareGiverInAHospitalRoom</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>GBKT_Explorer_BaseMood</defName>
+    <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>GBKT_Explorer</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Explorer Mood</label>
+        <description>Reduced by 20 while at home. While in a caravan or on another map this bonus is then applicable</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>GBKT_Explorer_NotAtHome</defName>
+    <workerClass>GBKT_ThoughtWorkers.ThoughtWorker_GBKT_ExplorerAtHome</workerClass>
+    <requiredTraits>
+      <li>GBKT_Explorer</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Explorer Is At Home</label>
+        <description>I want to see new places.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+      <li>
+        <label>Explorer Is Not At Home</label>
+        <description>I love seeing new places!</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>GBKT_Homebody_Base</defName>
+    <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>GBKT_Homebody</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Homebody</label>
+        <description>This penalty is countered while they are at home and is only here so they have a penalty while in a caravan</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>GBKT_Homebody_AtHome</defName>
+    <workerClass>GBKT_ThoughtWorkers.ThoughtWorker_GBKT_HomebodyAtHome</workerClass>
+    <requiredTraits>
+      <li>GBKT_Homebody</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Homebody Is At Home</label>
+        <description>I love being home.</description>
+        <baseMoodEffect>18</baseMoodEffect>
+      </li>
+      <li>
+        <label>Homebody Is Not At Home</label>
+        <description>I want to be home</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>GBKT_DirtLover_InDirt</defName>
+    <workerClass>GBKT_ThoughtWorkers.ThoughtWorker_DirtLoverInDirt</workerClass>
+    <requiredTraits>
+      <li>GBKT_DirtLover</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Dirt Lover In Dirt</label>
+        <description>I love being in contact with dirt.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>Dirt Lover In Dirt</label>
+        <description>I love being in contact with dirt.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>GBKT_Foodie_InADinningRoom</defName>
+    <workerClass>GBKT_ThoughtWorkers.ThoughtWorker_Foodie_InADinningRoom</workerClass>
+    <requiredTraits>
+      <li>GBKT_Foodie</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Foodie In A Dinning Room</label>
+        <description>I love being where i can best get what I need</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>Foodie In A Dinning Room</label>
+        <description>I love being where i can best get what I need</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>GBKT_BattleThrill_Fighting</defName>
+    <workerClass>GBKT_ThoughtWorkers.ThoughtWorker_BattleThrill_Fighting</workerClass>
+    <requiredTraits>
+      <li>GBKT_BattleThrill</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Thrilling Battle</label>
+        <description>I love being in a fight</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+      <li>
+        <label>Thrilling Battle</label>
+        <description>I love being in a fight</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>GBKT_DirtLover_NeedBeauty</defName>
+    <workerClass>ThoughtWorker_NeedBeauty</workerClass>
+    <requiredTraits>
+      <li>GBKT_DirtLover</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>hideous environment</label>
+        <description>This place is filthy. It lifts me up and makes me love life.</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>ugly environment</label>
+        <description>I really like this place. It's dirty.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>unsightly environment</label>
+        <description>This place looks dirty.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>pretty environment</label>
+        <description>This place is kind of clean. I wish I didn't have to look at all this.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+      <li>
+        <label>beautiful environment</label>
+        <description>This place is really clean. I wish I didn't have to look at this any more.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+      <li>
+        <label>gorgeous environment</label>
+        <description>This place is unbearably clean. I can't look at this any more.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThoughtDef[defName="SoakingWet"]/nullifyingTraits</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThoughtDef[defName="SoakingWet"]/nullifyingTraits</xpath>
+      <value>
+        <li>GBKT_Aquaphile</li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThoughtDef[defName="SoakingWet"]</xpath>
+      <value>
+        <nullifyingTraits>
+          <li>GBKT_Aquaphile</li>
+        </nullifyingTraits>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThoughtDef[defName="NeedBeauty"]/nullifyingTraits</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThoughtDef[defName="NeedBeauty"]/nullifyingTraits</xpath>
+      <value>
+        <li>GBKT_DirtLover</li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThoughtDef[defName="NeedBeauty"]</xpath>
+      <value>
+        <nullifyingTraits>
+          <li>GBKT_DirtLover</li>
+        </nullifyingTraits>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThoughtDef[defName="SleptInHeat"]/nullifyingTraits</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThoughtDef[defName="SleptInHeat"]/nullifyingTraits</xpath>
+      <value>
+        <li>GBKT_SunBather</li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThoughtDef[defName="SleptInHeat"]</xpath>
+      <value>
+        <nullifyingTraits>
+          <li>GBKT_SunBather</li>
+        </nullifyingTraits>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThoughtDef[defName="SleptInCold"]/nullifyingTraits</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThoughtDef[defName="SleptInCold"]/nullifyingTraits</xpath>
+      <value>
+        <li>GBKT_SnowBunny</li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThoughtDef[defName="SleptInCold"]</xpath>
+      <value>
+        <nullifyingTraits>
+          <li>GBKT_SnowBunny</li>
+        </nullifyingTraits>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>

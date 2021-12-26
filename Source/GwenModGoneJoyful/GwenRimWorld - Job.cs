@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using RimWorld;
 using Verse;
@@ -10,7 +10,6 @@ namespace GBTK_JobTypes
     public class JoyGiver_GoForWalk_789789 : JoyGiver
     {
 
-        // Token: 0x06000568 RID: 1384 RVA: 0x00035040 File Offset: 0x00033440
         public override Job TryGiveJob(Pawn pawn)
         {
             
@@ -101,13 +100,11 @@ namespace GBTK_JobTypes
     //The below is unalted of hte base code and doesn't work
     public class JobDriver_GoForWalk_Test : JobDriver
     {
-        // Token: 0x06000298 RID: 664 RVA: 0x00019488 File Offset: 0x00017888
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return true;
         }
 
-        // Token: 0x06000299 RID: 665 RVA: 0x0001948C File Offset: 0x0001788C
         protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOn(() => !JoyUtility.EnjoyableOutsideNow(this.pawn, null));
@@ -141,7 +138,6 @@ namespace GBTK_JobTypes
     }
     public class JoyGiver_GoForWalk_InRain : JoyGiver
     {
-        // Token: 0x06000568 RID: 1384 RVA: 0x00035040 File Offset: 0x00033440
         public override Job TryGiveJob(Pawn pawn)
         {
             string DoesCurrentWeatherMakePawnWet = "Null";
@@ -195,7 +191,6 @@ namespace GBTK_JobTypes
     public class JoyGiver_GBKT_RunBackAndForth : JoyGiver
     {
 
-        // Token: 0x06000568 RID: 1384 RVA: 0x00035040 File Offset: 0x00033440
         public override Job TryGiveJob(Pawn pawn)
         {
 
