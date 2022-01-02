@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "bd499e05-52e1-4893-8aa9-987db9ef10a6": {
+      "ProjectGuid": "bd499e05-52e1-4893-8aa9-987db9ef10a6",
+      "DisplayName": "GwenModGoneJoyful",
+      "ColorIndex": 0
+    },
+    "1f9b99c7-368e-4162-8103-dad5d05a2672": {
+      "ProjectGuid": "1f9b99c7-368e-4162-8103-dad5d05a2672",
+      "DisplayName": "EBTools",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

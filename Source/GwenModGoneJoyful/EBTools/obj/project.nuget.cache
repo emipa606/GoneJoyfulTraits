@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "GnCL3n5jhndK+tatTftBzBg8PW6H9TXPXQHsfhWuy3MKw2Oh/3cSL/n5yLpEofU1X7T5PGZqC6IITofX2QiZ0Q==",
+  "success": true,
+  "projectFilePath": "E:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\0-Gone-Joyful\\Source\\GwenModGoneJoyful\\EBTools\\EBTools.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\inade\\.nuget\\packages\\krafs.rimworld.ref\\1.3.3200\\krafs.rimworld.ref.1.3.3200.nupkg.sha512",
+    "C:\\Users\\inade\\.nuget\\packages\\lib.harmony\\2.1.1\\lib.harmony.2.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
