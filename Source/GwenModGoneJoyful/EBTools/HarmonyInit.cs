@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using System.Reflection;
+using HarmonyLib;
 using Verse;
 
 namespace EBTools;
@@ -8,8 +9,6 @@ internal static class HarmonyInit
 {
     static HarmonyInit()
     {
-        var harmony = new Harmony("EBToolsHarmony");
-        // harmony.PatchAll(Assembly.GetExecutingAssembly());
-        harmony.PatchAll();
+        new Harmony("EBToolsHarmony").PatchAll(Assembly.GetExecutingAssembly());
     }
 }

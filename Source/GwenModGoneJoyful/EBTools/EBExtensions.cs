@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace EBTools;
 
@@ -7,12 +6,12 @@ public static class EBExtensions
 {
     public static IEnumerable<T> OrEmptyIfNull<T>(this IEnumerable<T> source)
     {
-        return source ?? Enumerable.Empty<T>();
+        return source ?? [];
     }
 
     public static List<T> OrEmptyIfNull<T>(this List<T> source)
     {
-        return source ?? new List<T>();
+        return source ?? [];
     }
 
     public static int AsInt(this bool source)
