@@ -1,8 +1,8 @@
-# [Gone Joyful Traits (Continued)]()
+# [Gone Joyful Traits (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=3425631517)
 
 ![Image](https://i.imgur.com/buuPQel.png)
 
-Update of gwen blanket knights mod https://steamcommunity.com/sharedfiles/filedetails/?id=1873118928
+Update of gwen blanket specters mod https://steamcommunity.com/sharedfiles/filedetails/?id=1873118928
 by request of the author.
 
 ![Image](https://i.imgur.com/pufA0kM.png)
@@ -30,4 +30,6 @@ my twitch: https://www.twitch.tv/gwenblanketspecter
 -  If you have the solution for a problem, please post it to the GitHub repository.
 -  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
+ 
 
+[![Image](https://img.shields.io/github/v/release/emipa606/GoneJoyfulTraits?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3425631517) | tags:  traits

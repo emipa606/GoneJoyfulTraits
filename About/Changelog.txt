@@ -1,4 +1,7 @@
 # Changelog for GoneJoyfulTraits
 
+1.5.2 - Fixed issue with shamblers
+
+
 1.5.1 - Updated to 1.5
 

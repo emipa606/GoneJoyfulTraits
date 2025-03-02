@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using GBTK_DefinitionTypes;
 using RimWorld;
@@ -45,7 +46,7 @@ public class GBT_TraitChecker : WorldComponent
         maps = Find.Maps;
         foreach (var map in maps)
         {
-            var pawns = map.mapPawns.AllPawnsSpawned;
+            var pawns = map.mapPawns.AllPawnsSpawned.Where(pawn => !pawn.IsEntity && !pawn.IsShambler);
             foreach (var pawn in pawns)
             {
                 //Log.Error("this runs");
