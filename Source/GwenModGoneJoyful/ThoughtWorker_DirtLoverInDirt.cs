@@ -29,11 +29,8 @@ public class ThoughtWorker_DirtLoverInDirt : ThoughtWorker
             return ThoughtState.Inactive;
         }
 
-        if (WhatFilthDoesTileMake == "Filth_Dirt" || WhatFilthDoesTileMake == "Filth_Sand")
-        {
-            return ThoughtState.ActiveAtStage(0);
-        }
-
-        return ThoughtState.Inactive;
+        return WhatFilthDoesTileMake is "Filth_Dirt" or "Filth_Sand"
+            ? ThoughtState.ActiveAtStage(0)
+            : ThoughtState.Inactive;
     }
 }

@@ -24,11 +24,8 @@ public class ThoughtWorker_GBKT_DirtLover_OnDirt : ThoughtWorker
             return ThoughtState.Inactive;
         }
 
-        if (WhatFilthDoesTileMake != "Filth_Dirt" || WhatFilthDoesTileMake != "Filth_Sand")
-        {
-            return ThoughtState.Inactive;
-        }
-
-        return ThoughtState.ActiveAtStage(0);
+        return WhatFilthDoesTileMake is not ("Filth_Dirt" or "Filth_Sand")
+            ? ThoughtState.Inactive
+            : ThoughtState.ActiveAtStage(0);
     }
 }

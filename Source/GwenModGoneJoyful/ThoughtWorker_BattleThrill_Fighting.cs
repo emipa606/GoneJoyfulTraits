@@ -25,7 +25,7 @@ public class ThoughtWorker_BattleThrill_Fighting : ThoughtWorker
             return ThoughtState.Inactive;
         }
 
-        if (PawnsCurrentJob != "AttackStatic" || PawnsCurrentJob != "AttackMelee" || PawnsCurrentJob != "SocialFight")
+        if (PawnsCurrentJob is not ("AttackStatic" or "AttackMelee" or "SocialFight"))
         {
             return ThoughtState.Inactive;
         }

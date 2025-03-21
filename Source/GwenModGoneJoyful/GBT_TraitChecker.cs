@@ -11,6 +11,7 @@ namespace GBKT_Main;
 
 public class GBT_TraitChecker : WorldComponent
 {
+    private static readonly NeedDef joyNeedDef = DefDatabase<NeedDef>.GetNamedSilentFail("Joy");
     private readonly List<BodyPartDef> GBKT_BodyPartDef = [];
 
     private readonly TraitDef[]
@@ -67,11 +68,13 @@ public class GBT_TraitChecker : WorldComponent
                             PawnsCurrentJob = pawn.CurJobDef.ToString();
                         }
 
-                        if (PawnsCurrentJob == "Skygaze" || PawnsCurrentJob == "UseTelescope")
+                        if (PawnsCurrentJob is "Skygaze" or "UseTelescope")
                         {
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBTK_DefinitionTypes_Hediff.GBKT_SkyGazerSeesSky, GBKT_BodyPartDef);
                         }
+
+                        continue;
                     }
 
                     //CARE GIVER
@@ -80,14 +83,16 @@ public class GBT_TraitChecker : WorldComponent
                         var PawnsCurrentJob = pawn.CurJobDef.ToString();
                         if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_CareGiver)
                         {
-                            if (PawnsCurrentJob == "VisitSickPawn" || PawnsCurrentJob == "TendPatient" ||
-                                PawnsCurrentJob == "FeedPatient")
+                            if (PawnsCurrentJob is "VisitSickPawn" or "TendPatient" or "FeedPatient")
                             {
                                 if (pawn.CurJob.targetA == VisitedPAwn)
                                 {
                                     _ = HediffGiverUtility.TryApply(VisitedPAwn,
                                         GBTK_DefinitionTypes_Hediff.GBKT_CareGiverVisited, GBKT_BodyPartDef);
-                                    VisitedPAwn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Social);
+                                    if (VisitedPAwn.needs.TryGetNeed(joyNeedDef) != null)
+                                    {
+                                        VisitedPAwn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Social);
+                                    }
                                 }
                             }
                         }
@@ -136,6 +141,8 @@ public class GBT_TraitChecker : WorldComponent
                                     GBTK_DefinitionTypes_Hediff.GBKT_Aquaphile_Is_Wet, GBKT_BodyPartDef);
                             }
                         }
+
+                        continue;
                     }
 
                     //ENERGETIC
@@ -158,6 +165,8 @@ public class GBT_TraitChecker : WorldComponent
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBTK_DefinitionTypes_Hediff.GBKT_EnergizedEnergetic, GBKT_BodyPartDef);
                         }
+
+                        continue;
                     }
 
                     //EXPLORER
@@ -188,6 +197,8 @@ public class GBT_TraitChecker : WorldComponent
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBTK_DefinitionTypes_Hediff.GBKT_ExplorerNotAtHome, GBKT_BodyPartDef);
                         }
+
+                        continue;
                     }
 
                     //HOMEBODY
@@ -201,7 +212,6 @@ public class GBT_TraitChecker : WorldComponent
                             PawnsCurrentJob = pawn.CurJobDef.ToString();
                         }
 
-                        var GBKT_JoyLevel = pawn.needs.joy.CurLevelPercentage;
                         if (IsThePawnInThePlayerHome && IsThePawnInThePlayerFaction)
                         {
                             _ = HediffGiverUtility.TryApply(pawn,
@@ -214,6 +224,12 @@ public class GBT_TraitChecker : WorldComponent
                                 GBTK_DefinitionTypes_Hediff.GBKT_Homebody_AtHome, GBKT_BodyPartDef);
                         }
 
+                        if (pawn.needs.TryGetNeed(joyNeedDef) == null)
+                        {
+                            continue;
+                        }
+
+                        var GBKT_JoyLevel = pawn.needs.joy.CurLevelPercentage;
                         if (PawnsCurrentJob == "Clean" && GBKT_JoyLevel < 74.00f)
                         {
                             pawn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Meditative);
@@ -259,7 +275,11 @@ public class GBT_TraitChecker : WorldComponent
 
                         if (PawnsCurrentJob == "GBKT_PlaceDirt" && IsPawnRoofed)
                         {
-                            pawn.needs.joy.GainJoy(10f, GBTK_DefinitionTypes_JoyDeff.Meditative);
+                            if (pawn.needs.TryGetNeed(joyNeedDef) != null)
+                            {
+                                pawn.needs.joy.GainJoy(10f, GBTK_DefinitionTypes_JoyDeff.Meditative);
+                            }
+
                             pawn.ClearAllReservations();
                             pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Dirt);
                             pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Sand);
@@ -274,6 +294,13 @@ public class GBT_TraitChecker : WorldComponent
                     //DREAMER
                     if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Dreamer)
                     {
+                        if (pawn.needs.TryGetNeed(joyNeedDef) == null)
+                        {
+                            // No point to have the trait
+                            pawn.story.traits.RemoveTrait(pawn.story.traits.GetTrait(traitDef));
+                            continue;
+                        }
+
                         var PawnsCurrentJob = "Null";
                         if (pawn.CurJobDef.ToString() != null)
                         {
@@ -311,6 +338,8 @@ public class GBT_TraitChecker : WorldComponent
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBTK_DefinitionTypes_Hediff.GBKT_DreamerUnhappyIV, GBKT_BodyPartDef);
                         }
+
+                        continue;
                     }
 
                     //GAMER
@@ -327,6 +356,8 @@ public class GBT_TraitChecker : WorldComponent
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBTK_DefinitionTypes_Hediff.GBKT_GamerPlayingGames, GBKT_BodyPartDef);
                         }
+
+                        continue;
                     }
 
                     //MEDITATIVE
@@ -343,6 +374,8 @@ public class GBT_TraitChecker : WorldComponent
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBTK_DefinitionTypes_Hediff.GBKT_RecentlyMeditatied, GBKT_BodyPartDef);
                         }
+
+                        continue;
                     }
 
                     //Socialite
@@ -365,6 +398,8 @@ public class GBT_TraitChecker : WorldComponent
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBTK_DefinitionTypes_Hediff.GBKT_SocailiteBase, GBKT_BodyPartDef);
                         }
+
+                        continue;
                     }
 
                     //COUCH POTATO
@@ -381,11 +416,13 @@ public class GBT_TraitChecker : WorldComponent
                             PawnsCurrentJob = pawn.CurJobDef.ToString();
                         }
 
-                        if (PawnsCurrentJob == "ViewArt" || PawnsCurrentJob == "WatchTelevision")
+                        if (PawnsCurrentJob is "ViewArt" or "WatchTelevision")
                         {
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBTK_DefinitionTypes_Hediff.GBKT_CouchPotatoViewing, GBKT_BodyPartDef);
                         }
+
+                        continue;
                     }
 
                     //FOODIE
@@ -409,10 +446,17 @@ public class GBT_TraitChecker : WorldComponent
                                 GBTK_DefinitionTypes_Hediff.GBKT_FoodieAteFood, GBKT_BodyPartDef);
                         }
 
+                        if (pawn.needs.TryGetNeed(joyNeedDef) == null)
+                        {
+                            continue;
+                        }
+
                         if (PawnsCurrentJob == "Ingest")
                         {
                             pawn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Gluttonous);
                         }
+
+                        continue;
                     }
 
                     // GBKT_BattleThrill
@@ -424,10 +468,13 @@ public class GBT_TraitChecker : WorldComponent
                             PawnsCurrentJob = pawn.CurJobDef.ToString();
                         }
 
-                        if (PawnsCurrentJob == "AttackStatic" || PawnsCurrentJob == "AttackMelee" ||
-                            PawnsCurrentJob == "SocialFight")
+                        if (PawnsCurrentJob is "AttackStatic" or "AttackMelee" or "SocialFight")
                         {
-                            pawn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Meditative);
+                            if (pawn.needs.TryGetNeed(joyNeedDef) != null)
+                            {
+                                pawn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Meditative);
+                            }
+
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBTK_DefinitionTypes_Hediff.GBKT_BattleThrillBattling, GBKT_BodyPartDef);
                         }
@@ -443,6 +490,8 @@ public class GBT_TraitChecker : WorldComponent
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBTK_DefinitionTypes_Hediff.GBKT_BattleThrillBattling, GBKT_BodyPartDef);
                         }
+
+                        continue;
                     }
 
                     // SUN BATHER
@@ -459,7 +508,9 @@ public class GBT_TraitChecker : WorldComponent
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBTK_DefinitionTypes_Hediff.GBKT_SunBather_SoakedUpRays, GBKT_BodyPartDef);
                         }
-                    } //
+
+                        continue;
+                    }
 
                     //SNOW BUNNY
                     if (traitDef != GBTK_DefinitionTypes_Traits.GBKT_SnowBunny)

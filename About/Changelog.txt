@@ -1,5 +1,8 @@
 # Changelog for GoneJoyfulTraits
 
+1.5.3 - Fixed issue with traits trying to change needs that the pawn does not have
+
+
 1.5.2 - Fixed issue with shamblers
 
 
