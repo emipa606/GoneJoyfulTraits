@@ -11,17 +11,8 @@ public class ThoughtWorker_Foodie_InADinningRoom : ThoughtWorker
     protected override ThoughtState CurrentStateInternal(Pawn pawn)
     {
         var room = pawn.GetRoom(RegionType.Set_Passable);
-        if (!pawn.Spawned)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!pawn.RaceProps.Humanlike)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_Foodie))
+        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
+            !pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_Foodie))
         {
             return ThoughtState.Inactive;
         }

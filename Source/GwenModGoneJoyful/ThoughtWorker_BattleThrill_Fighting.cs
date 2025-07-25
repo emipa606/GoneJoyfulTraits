@@ -10,22 +10,9 @@ public class ThoughtWorker_BattleThrill_Fighting : ThoughtWorker
     {
         var PawnsCurrentJob = pawn.CurJobDef.ToString();
         var room = pawn.GetRoom(RegionType.Set_Passable);
-        if (!pawn.Spawned)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!pawn.RaceProps.Humanlike)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_BattleThrill))
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (PawnsCurrentJob is not ("AttackStatic" or "AttackMelee" or "SocialFight"))
+        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
+            !pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_BattleThrill) ||
+            PawnsCurrentJob is not ("AttackStatic" or "AttackMelee" or "SocialFight"))
         {
             return ThoughtState.Inactive;
         }

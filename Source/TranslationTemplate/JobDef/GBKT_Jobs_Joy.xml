@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Digging Up Dirt -->
+  <GBKT_EatDirt.reportString>Digging Up Dirt</GBKT_EatDirt.reportString>
+  <!-- EN: Playing In The Rain -->
+  <GBKT_EnjoyRain.reportString>Playing In The Rain</GBKT_EnjoyRain.reportString>
+  <!-- EN: Playing In The Snow -->
+  <GBKT_EnjoySnow.reportString>Playing In The Snow</GBKT_EnjoySnow.reportString>
+  <!-- EN: Playing In The Water -->
+  <GBKT_EnjoyWaterTiles.reportString>Playing In The Water</GBKT_EnjoyWaterTiles.reportString>
+  <!-- EN: Placing Dirt -->
+  <GBKT_PlaceDirt.reportString>Placing Dirt</GBKT_PlaceDirt.reportString>
+  <!-- EN: Running Back And Forth -->
+  <GBKT_RunBackAndForth.reportString>Running Back And Forth</GBKT_RunBackAndForth.reportString>
+  <!-- EN: Sunbathe -->
+  <GBKT_SunBathe.reportString>Sunbathe</GBKT_SunBathe.reportString>
+  <!-- EN: Wandering Map Edge -->
+  <GBKT_WanderMapEdge.reportString>Wandering Map Edge</GBKT_WanderMapEdge.reportString>
+</LanguageData>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Thrilling Battle -->
+  <GBKT_BattleThrill_Fighting.stages.Thrilling_Battle-0.label>Thrilling Battle</GBKT_BattleThrill_Fighting.stages.Thrilling_Battle-0.label>
+  <!-- EN: I love being in a fight -->
+  <GBKT_BattleThrill_Fighting.stages.Thrilling_Battle-0.description>I love being in a fight</GBKT_BattleThrill_Fighting.stages.Thrilling_Battle-0.description>
+  <!-- EN: Thrilling Battle -->
+  <GBKT_BattleThrill_Fighting.stages.Thrilling_Battle-1.label>Thrilling Battle</GBKT_BattleThrill_Fighting.stages.Thrilling_Battle-1.label>
+  <!-- EN: I love being in a fight -->
+  <GBKT_BattleThrill_Fighting.stages.Thrilling_Battle-1.description>I love being in a fight</GBKT_BattleThrill_Fighting.stages.Thrilling_Battle-1.description>
+  <!-- EN: Care Giver In A Hospital Room -->
+  <GBKT_CareGiverInAHospitalRoom.stages.Care_Giver_In_A_Hospital_Room.label>Care Giver In A Hospital Room</GBKT_CareGiverInAHospitalRoom.stages.Care_Giver_In_A_Hospital_Room.label>
+  <!-- EN: I love being where I can help most efficiently. This is great. -->
+  <GBKT_CareGiverInAHospitalRoom.stages.Care_Giver_In_A_Hospital_Room.description>I love being where I can help most efficiently. This is great.</GBKT_CareGiverInAHospitalRoom.stages.Care_Giver_In_A_Hospital_Room.description>
+  <!-- EN: CareGiverInAHospitalRoom -->
+  <GBKT_CareGiverInAHospitalRoom.stages.CareGiverInAHospitalRoom.label>CareGiverInAHospitalRoom</GBKT_CareGiverInAHospitalRoom.stages.CareGiverInAHospitalRoom.label>
+  <!-- EN: CareGiverInAHospitalRoom -->
+  <GBKT_CareGiverInAHospitalRoom.stages.CareGiverInAHospitalRoom.description>CareGiverInAHospitalRoom</GBKT_CareGiverInAHospitalRoom.stages.CareGiverInAHospitalRoom.description>
+  <!-- EN: Dirt Lover In Dirt -->
+  <GBKT_DirtLover_InDirt.stages.Dirt_Lover_In_Dirt-0.label>Dirt Lover In Dirt</GBKT_DirtLover_InDirt.stages.Dirt_Lover_In_Dirt-0.label>
+  <!-- EN: I love being in contact with dirt. -->
+  <GBKT_DirtLover_InDirt.stages.Dirt_Lover_In_Dirt-0.description>I love being in contact with dirt.</GBKT_DirtLover_InDirt.stages.Dirt_Lover_In_Dirt-0.description>
+  <!-- EN: Dirt Lover In Dirt -->
+  <GBKT_DirtLover_InDirt.stages.Dirt_Lover_In_Dirt-1.label>Dirt Lover In Dirt</GBKT_DirtLover_InDirt.stages.Dirt_Lover_In_Dirt-1.label>
+  <!-- EN: I love being in contact with dirt. -->
+  <GBKT_DirtLover_InDirt.stages.Dirt_Lover_In_Dirt-1.description>I love being in contact with dirt.</GBKT_DirtLover_InDirt.stages.Dirt_Lover_In_Dirt-1.description>
+  <!-- EN: hideous environment -->
+  <GBKT_DirtLover_NeedBeauty.stages.hideous_environment.label>hideous environment</GBKT_DirtLover_NeedBeauty.stages.hideous_environment.label>
+  <!-- EN: This place is filthy. It lifts me up and makes me love life. -->
+  <GBKT_DirtLover_NeedBeauty.stages.hideous_environment.description>This place is filthy. It lifts me up and makes me love life.</GBKT_DirtLover_NeedBeauty.stages.hideous_environment.description>
+  <!-- EN: ugly environment -->
+  <GBKT_DirtLover_NeedBeauty.stages.ugly_environment.label>ugly environment</GBKT_DirtLover_NeedBeauty.stages.ugly_environment.label>
+  <!-- EN: I really like this place. It's dirty. -->
+  <GBKT_DirtLover_NeedBeauty.stages.ugly_environment.description>I really like this place. It's dirty.</GBKT_DirtLover_NeedBeauty.stages.ugly_environment.description>
+  <!-- EN: unsightly environment -->
+  <GBKT_DirtLover_NeedBeauty.stages.unsightly_environment.label>unsightly environment</GBKT_DirtLover_NeedBeauty.stages.unsightly_environment.label>
+  <!-- EN: This place looks dirty. -->
+  <GBKT_DirtLover_NeedBeauty.stages.unsightly_environment.description>This place looks dirty.</GBKT_DirtLover_NeedBeauty.stages.unsightly_environment.description>
+  <!-- EN: pretty environment -->
+  <GBKT_DirtLover_NeedBeauty.stages.pretty_environment.label>pretty environment</GBKT_DirtLover_NeedBeauty.stages.pretty_environment.label>
+  <!-- EN: This place is kind of clean. I wish I didn't have to look at all this. -->
+  <GBKT_DirtLover_NeedBeauty.stages.pretty_environment.description>This place is kind of clean. I wish I didn't have to look at all this.</GBKT_DirtLover_NeedBeauty.stages.pretty_environment.description>
+  <!-- EN: beautiful environment -->
+  <GBKT_DirtLover_NeedBeauty.stages.beautiful_environment.label>beautiful environment</GBKT_DirtLover_NeedBeauty.stages.beautiful_environment.label>
+  <!-- EN: This place is really clean. I wish I didn't have to look at this any more. -->
+  <GBKT_DirtLover_NeedBeauty.stages.beautiful_environment.description>This place is really clean. I wish I didn't have to look at this any more.</GBKT_DirtLover_NeedBeauty.stages.beautiful_environment.description>
+  <!-- EN: gorgeous environment -->
+  <GBKT_DirtLover_NeedBeauty.stages.gorgeous_environment.label>gorgeous environment</GBKT_DirtLover_NeedBeauty.stages.gorgeous_environment.label>
+  <!-- EN: This place is unbearably clean. I can't look at this any more. -->
+  <GBKT_DirtLover_NeedBeauty.stages.gorgeous_environment.description>This place is unbearably clean. I can't look at this any more.</GBKT_DirtLover_NeedBeauty.stages.gorgeous_environment.description>
+  <!-- EN: Explorer Mood -->
+  <GBKT_Explorer_BaseMood.stages.Explorer_Mood.label>Explorer Mood</GBKT_Explorer_BaseMood.stages.Explorer_Mood.label>
+  <!-- EN: Reduced by 20 while at home. While in a caravan or on another map this bonus is then applicable -->
+  <GBKT_Explorer_BaseMood.stages.Explorer_Mood.description>Reduced by 20 while at home. While in a caravan or on another map this bonus is then applicable</GBKT_Explorer_BaseMood.stages.Explorer_Mood.description>
+  <!-- EN: Explorer Is At Home -->
+  <GBKT_Explorer_NotAtHome.stages.Explorer_Is_At_Home.label>Explorer Is At Home</GBKT_Explorer_NotAtHome.stages.Explorer_Is_At_Home.label>
+  <!-- EN: I want to see new places. -->
+  <GBKT_Explorer_NotAtHome.stages.Explorer_Is_At_Home.description>I want to see new places.</GBKT_Explorer_NotAtHome.stages.Explorer_Is_At_Home.description>
+  <!-- EN: Explorer Is Not At Home -->
+  <GBKT_Explorer_NotAtHome.stages.Explorer_Is_Not_At_Home.label>Explorer Is Not At Home</GBKT_Explorer_NotAtHome.stages.Explorer_Is_Not_At_Home.label>
+  <!-- EN: I love seeing new places! -->
+  <GBKT_Explorer_NotAtHome.stages.Explorer_Is_Not_At_Home.description>I love seeing new places!</GBKT_Explorer_NotAtHome.stages.Explorer_Is_Not_At_Home.description>
+  <!-- EN: Foodie In A Dinning Room -->
+  <GBKT_Foodie_InADinningRoom.stages.Foodie_In_A_Dinning_Room-0.label>Foodie In A Dinning Room</GBKT_Foodie_InADinningRoom.stages.Foodie_In_A_Dinning_Room-0.label>
+  <!-- EN: I love being where i can best get what I need -->
+  <GBKT_Foodie_InADinningRoom.stages.Foodie_In_A_Dinning_Room-0.description>I love being where i can best get what I need</GBKT_Foodie_InADinningRoom.stages.Foodie_In_A_Dinning_Room-0.description>
+  <!-- EN: Foodie In A Dinning Room -->
+  <GBKT_Foodie_InADinningRoom.stages.Foodie_In_A_Dinning_Room-1.label>Foodie In A Dinning Room</GBKT_Foodie_InADinningRoom.stages.Foodie_In_A_Dinning_Room-1.label>
+  <!-- EN: I love being where i can best get what I need -->
+  <GBKT_Foodie_InADinningRoom.stages.Foodie_In_A_Dinning_Room-1.description>I love being where i can best get what I need</GBKT_Foodie_InADinningRoom.stages.Foodie_In_A_Dinning_Room-1.description>
+  <!-- EN: Homebody Is At Home -->
+  <GBKT_Homebody_AtHome.stages.Homebody_Is_At_Home.label>Homebody Is At Home</GBKT_Homebody_AtHome.stages.Homebody_Is_At_Home.label>
+  <!-- EN: I love being home. -->
+  <GBKT_Homebody_AtHome.stages.Homebody_Is_At_Home.description>I love being home.</GBKT_Homebody_AtHome.stages.Homebody_Is_At_Home.description>
+  <!-- EN: Homebody Is Not At Home -->
+  <GBKT_Homebody_AtHome.stages.Homebody_Is_Not_At_Home.label>Homebody Is Not At Home</GBKT_Homebody_AtHome.stages.Homebody_Is_Not_At_Home.label>
+  <!-- EN: I want to be home -->
+  <GBKT_Homebody_AtHome.stages.Homebody_Is_Not_At_Home.description>I want to be home</GBKT_Homebody_AtHome.stages.Homebody_Is_Not_At_Home.description>
+  <!-- EN: Homebody -->
+  <GBKT_Homebody_Base.stages.Homebody.label>Homebody</GBKT_Homebody_Base.stages.Homebody.label>
+  <!-- EN: This penalty is countered while they are at home and is only here so they have a penalty while in a caravan -->
+  <GBKT_Homebody_Base.stages.Homebody.description>This penalty is countered while they are at home and is only here so they have a penalty while in a caravan</GBKT_Homebody_Base.stages.Homebody.description>
+  <!-- EN: Happy Sky Gazer -->
+  <GBKT_SkyGazerThought.stages.Happy_Sky_Gazer-0.label>Happy Sky Gazer</GBKT_SkyGazerThought.stages.Happy_Sky_Gazer-0.label>
+  <!-- EN: I can clearly see the sky. This is great. -->
+  <GBKT_SkyGazerThought.stages.Happy_Sky_Gazer-0.description>I can clearly see the sky. This is great.</GBKT_SkyGazerThought.stages.Happy_Sky_Gazer-0.description>
+  <!-- EN: Happy Sky Gazer -->
+  <GBKT_SkyGazerThought.stages.Happy_Sky_Gazer-1.label>Happy Sky Gazer</GBKT_SkyGazerThought.stages.Happy_Sky_Gazer-1.label>
+  <!-- EN: I can clearly see the sky. This is great. -->
+  <GBKT_SkyGazerThought.stages.Happy_Sky_Gazer-1.description>I can clearly see the sky. This is great.</GBKT_SkyGazerThought.stages.Happy_Sky_Gazer-1.description>
+</LanguageData>

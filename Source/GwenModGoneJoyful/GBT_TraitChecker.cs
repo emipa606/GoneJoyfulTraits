@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using GBTK_DefinitionTypes;
 using RimWorld;
 using RimWorld.Planet;
@@ -17,8 +17,6 @@ public class GBT_TraitChecker : WorldComponent
     private readonly TraitDef[]
         GBKT_TraitDef =
             new TraitDef[16]; /*IF the code has aw eird map error it is because this nubmer is too fuckign low*/
-
-    private List<Map> maps;
 
     public GBT_TraitChecker(World world) : base(world)
     {
@@ -44,493 +42,493 @@ public class GBT_TraitChecker : WorldComponent
 
     public override void WorldComponentTick()
     {
-        maps = Find.Maps;
-        foreach (var map in maps)
+        Parallel.ForEach(PawnsFinder.AllMaps, pawn =>
         {
-            var pawns = map.mapPawns.AllPawnsSpawned.Where(pawn => !pawn.IsEntity && !pawn.IsShambler);
-            foreach (var pawn in pawns)
+            if (!pawn.IsEntity && !pawn.IsShambler)
             {
-                //Log.Error("this runs");
-                foreach (var traitDef in GBKT_TraitDef)
+                return;
+            }
+
+            //Log.Error("this runs");
+            foreach (var traitDef in GBKT_TraitDef)
+            {
+                var hasTrait = pawn.story?.traits?.HasTrait(traitDef);
+                if (hasTrait != true)
                 {
-                    var hasTrait = pawn.story?.traits?.HasTrait(traitDef);
-                    if (hasTrait != true)
+                    continue;
+                }
+
+                //SKY GAZER
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_SkyGazer)
+                {
+                    var PawnsCurrentJob = "Null";
+                    if (pawn.CurJobDef.ToString() != null)
                     {
-                        continue;
+                        PawnsCurrentJob = pawn.CurJobDef.ToString();
                     }
 
-                    //SKY GAZER
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_SkyGazer)
+                    if (PawnsCurrentJob is "Skygaze" or "UseTelescope")
                     {
-                        var PawnsCurrentJob = "Null";
-                        if (pawn.CurJobDef.ToString() != null)
-                        {
-                            PawnsCurrentJob = pawn.CurJobDef.ToString();
-                        }
-
-                        if (PawnsCurrentJob is "Skygaze" or "UseTelescope")
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_SkyGazerSeesSky, GBKT_BodyPartDef);
-                        }
-
-                        continue;
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_SkyGazerSeesSky, GBKT_BodyPartDef);
                     }
 
-                    //CARE GIVER
-                    foreach (var VisitedPAwn in pawns)
+                    continue;
+                }
+
+                //CARE GIVER
+                foreach (var VisitedPAwn in pawn.Map.mapPawns.AllPawnsSpawned)
+                {
+                    var PawnsCurrentJob = pawn.CurJobDef.ToString();
+                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_CareGiver)
                     {
-                        var PawnsCurrentJob = pawn.CurJobDef.ToString();
-                        if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_CareGiver)
+                        if (PawnsCurrentJob is "VisitSickPawn" or "TendPatient" or "FeedPatient")
                         {
-                            if (PawnsCurrentJob is "VisitSickPawn" or "TendPatient" or "FeedPatient")
+                            if (pawn.CurJob.targetA == VisitedPAwn)
                             {
-                                if (pawn.CurJob.targetA == VisitedPAwn)
+                                _ = HediffGiverUtility.TryApply(VisitedPAwn,
+                                    GBTK_DefinitionTypes_Hediff.GBKT_CareGiverVisited, GBKT_BodyPartDef);
+                                if (VisitedPAwn.needs.TryGetNeed(joyNeedDef) != null)
                                 {
-                                    _ = HediffGiverUtility.TryApply(VisitedPAwn,
-                                        GBTK_DefinitionTypes_Hediff.GBKT_CareGiverVisited, GBKT_BodyPartDef);
-                                    if (VisitedPAwn.needs.TryGetNeed(joyNeedDef) != null)
-                                    {
-                                        VisitedPAwn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Social);
-                                    }
+                                    VisitedPAwn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Social);
                                 }
                             }
                         }
+                    }
 
-                        if (PawnsCurrentJob == "TendPatient")
+                    if (PawnsCurrentJob == "TendPatient")
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_CareGiverTendedAPatient, GBKT_BodyPartDef);
+                    }
+                }
+
+                //AQUAPHILE
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Aquaphile)
+                {
+                    var DoesTileExtinguishFire = pawn.Position.GetTerrain(pawn.Map).extinguishesFire;
+                    if (DoesTileExtinguishFire)
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_Aquaphile_On_Water_Tile, GBKT_BodyPartDef);
+                    }
+
+                    if (DoesTileExtinguishFire)
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_Aquaphile_Is_Wet, GBKT_BodyPartDef);
+                    }
+
+                    if (pawn.Map.weatherManager.curWeather.weatherThought != null)
+                    {
+                        var DoesCurrentWeatherMakePawnWet =
+                            pawn.Map.weatherManager.curWeather.weatherThought.ToString();
+                        if (DoesCurrentWeatherMakePawnWet == "SoakingWet")
                         {
                             _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_CareGiverTendedAPatient, GBKT_BodyPartDef);
+                                GBTK_DefinitionTypes_Hediff.GBKT_Aquaphile_In_The_Rain, GBKT_BodyPartDef);
                         }
                     }
 
-                    //AQUAPHILE
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Aquaphile)
+                    if (pawn.Map.weatherManager.curWeather.weatherThought != null)
                     {
-                        var DoesTileExtinguishFire = pawn.Position.GetTerrain(pawn.Map).extinguishesFire;
-                        if (DoesTileExtinguishFire)
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_Aquaphile_On_Water_Tile, GBKT_BodyPartDef);
-                        }
-
-                        if (DoesTileExtinguishFire)
+                        var DoesCurrentWeatherMakePawnWet =
+                            pawn.Map.weatherManager.curWeather.weatherThought.ToString();
+                        if (DoesCurrentWeatherMakePawnWet == "SoakingWet")
                         {
                             _ = HediffGiverUtility.TryApply(pawn,
                                 GBTK_DefinitionTypes_Hediff.GBKT_Aquaphile_Is_Wet, GBKT_BodyPartDef);
                         }
-
-                        if (pawn.Map.weatherManager.curWeather.weatherThought != null)
-                        {
-                            var DoesCurrentWeatherMakePawnWet =
-                                pawn.Map.weatherManager.curWeather.weatherThought.ToString();
-                            if (DoesCurrentWeatherMakePawnWet == "SoakingWet")
-                            {
-                                _ = HediffGiverUtility.TryApply(pawn,
-                                    GBTK_DefinitionTypes_Hediff.GBKT_Aquaphile_In_The_Rain, GBKT_BodyPartDef);
-                            }
-                        }
-
-                        if (pawn.Map.weatherManager.curWeather.weatherThought != null)
-                        {
-                            var DoesCurrentWeatherMakePawnWet =
-                                pawn.Map.weatherManager.curWeather.weatherThought.ToString();
-                            if (DoesCurrentWeatherMakePawnWet == "SoakingWet")
-                            {
-                                _ = HediffGiverUtility.TryApply(pawn,
-                                    GBTK_DefinitionTypes_Hediff.GBKT_Aquaphile_Is_Wet, GBKT_BodyPartDef);
-                            }
-                        }
-
-                        continue;
                     }
 
-                    //ENERGETIC
+                    continue;
+                }
+
+                //ENERGETIC
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Energetic)
+                {
+                    var PawnsCurrentJob = "Null";
+                    if (pawn.CurJobDef.ToString() != null)
+                    {
+                        PawnsCurrentJob = pawn.CurJobDef.ToString();
+                    }
+
                     if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Energetic)
                     {
-                        var PawnsCurrentJob = "Null";
-                        if (pawn.CurJobDef.ToString() != null)
-                        {
-                            PawnsCurrentJob = pawn.CurJobDef.ToString();
-                        }
-
-                        if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Energetic)
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_BaseEnergetic, GBKT_BodyPartDef);
-                        }
-
-                        if (PawnsCurrentJob == "GBKT_RunBackAndForth")
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_EnergizedEnergetic, GBKT_BodyPartDef);
-                        }
-
-                        continue;
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_BaseEnergetic, GBKT_BodyPartDef);
                     }
 
-                    //EXPLORER
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Explorer)
-                    {
-                        var IsThePawnInThePlayerFaction = pawn.Faction.IsPlayer;
-                        var IsThePawnInThePlayerHome = pawn.Map.IsPlayerHome;
-                        if (IsThePawnInThePlayerFaction && IsThePawnInThePlayerHome)
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_ExplorerAtHome, GBKT_BodyPartDef);
-                        }
-
-                        if (IsThePawnInThePlayerFaction == false && IsThePawnInThePlayerHome == false)
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_ExplorerAtHome, GBKT_BodyPartDef);
-                        }
-
-                        if (IsThePawnInThePlayerFaction && IsThePawnInThePlayerHome == false)
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_ExplorerNotAtHome, GBKT_BodyPartDef);
-                        }
-
-                        if (IsThePawnInThePlayerFaction == false && IsThePawnInThePlayerHome)
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_ExplorerNotAtHome, GBKT_BodyPartDef);
-                        }
-
-                        continue;
-                    }
-
-                    //HOMEBODY
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Homebody)
-                    {
-                        var IsThePawnInThePlayerFaction = pawn.Faction.IsPlayer;
-                        var IsThePawnInThePlayerHome = pawn.Map.IsPlayerHome;
-                        var PawnsCurrentJob = "Null";
-                        if (pawn.CurJobDef.ToString() != null)
-                        {
-                            PawnsCurrentJob = pawn.CurJobDef.ToString();
-                        }
-
-                        if (IsThePawnInThePlayerHome && IsThePawnInThePlayerFaction)
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_Homebody_AtHome, GBKT_BodyPartDef);
-                        }
-
-                        if (IsThePawnInThePlayerFaction == false && IsThePawnInThePlayerHome == false)
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_Homebody_AtHome, GBKT_BodyPartDef);
-                        }
-
-                        if (pawn.needs.TryGetNeed(joyNeedDef) == null)
-                        {
-                            continue;
-                        }
-
-                        var GBKT_JoyLevel = pawn.needs.joy.CurLevelPercentage;
-                        if (PawnsCurrentJob == "Clean" && GBKT_JoyLevel < 74.00f)
-                        {
-                            pawn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Meditative);
-                        }
-                    }
-
-                    //DIRT LOVER
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_DirtLover)
-                    {
-                        var IsPawnRoofed = pawn.Position.Roofed(pawn.Map);
-                        var WhatFilthDoesTileMake = "Null";
-                        if (pawn.Position.GetTerrain(pawn.Map).generatedFilth != null)
-                        {
-                            WhatFilthDoesTileMake = pawn.Position.GetTerrain(pawn.Map).generatedFilth.ToString();
-                        }
-
-                        var PawnsCurrentJob = "Null";
-                        if (pawn.CurJobDef.ToString() != null)
-                        {
-                            PawnsCurrentJob = pawn.CurJobDef.ToString();
-                        }
-
-                        var random = new Random();
-                        var randomNumber = random.Next(0, 5);
-                        if (randomNumber == 5)
-                        {
-                            if (WhatFilthDoesTileMake == "Filth_Dirt")
-                            {
-                                pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Dirt);
-                            }
-
-                            if (WhatFilthDoesTileMake == "Filth_Sand")
-                            {
-                                pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Sand);
-                            }
-                        }
-
-                        if (PawnsCurrentJob == "GBKT_EatDirt")
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_AteSomeDirt, GBKT_BodyPartDef);
-                        }
-
-                        if (PawnsCurrentJob == "GBKT_PlaceDirt" && IsPawnRoofed)
-                        {
-                            if (pawn.needs.TryGetNeed(joyNeedDef) != null)
-                            {
-                                pawn.needs.joy.GainJoy(10f, GBTK_DefinitionTypes_JoyDeff.Meditative);
-                            }
-
-                            pawn.ClearAllReservations();
-                            pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Dirt);
-                            pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Sand);
-                            pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Dirt);
-                            pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Sand);
-                            pawn.filth.GetType()
-                                .GetMethod("TryDropFilth", BindingFlags.Instance | BindingFlags.NonPublic)
-                                .Invoke(pawn.filth, null);
-                        }
-                    }
-
-                    //DREAMER
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Dreamer)
-                    {
-                        if (pawn.needs.TryGetNeed(joyNeedDef) == null)
-                        {
-                            // No point to have the trait
-                            pawn.story.traits.RemoveTrait(pawn.story.traits.GetTrait(traitDef));
-                            continue;
-                        }
-
-                        var PawnsCurrentJob = "Null";
-                        if (pawn.CurJobDef.ToString() != null)
-                        {
-                            PawnsCurrentJob = pawn.CurJobDef.ToString();
-                        }
-
-                        var PawnsCurrentJoyLevel = pawn.needs.joy.CurLevelPercentage;
-                        var IsPawnInBed = pawn.InBed();
-                        //LayDown
-                        if (IsPawnInBed || PawnsCurrentJob == "LayDown")
-                        {
-                            pawn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Meditative);
-                        }
-
-                        if (PawnsCurrentJoyLevel is <= 0.80f and > 0.60f)
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_DreamerUnhappyI, GBKT_BodyPartDef);
-                        }
-
-                        if (PawnsCurrentJoyLevel is <= 0.60f and > 0.40f)
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_DreamerUnhappyII, GBKT_BodyPartDef);
-                        }
-
-                        if (PawnsCurrentJoyLevel is <= 0.40f and > 0.20f)
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_DreamerUnhappyIII, GBKT_BodyPartDef);
-                        }
-
-                        if (PawnsCurrentJoyLevel is <= 0.20f and >= 0.0f)
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_DreamerUnhappyIV, GBKT_BodyPartDef);
-                        }
-
-                        continue;
-                    }
-
-                    //GAMER
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Gamer)
-                    {
-                        var PawnsCurrentJoyKind = "Null";
-                        if (pawn.CurJobDef.joyKind != null)
-                        {
-                            PawnsCurrentJoyKind = pawn.CurJobDef.joyKind.ToString();
-                        }
-
-                        if (PawnsCurrentJoyKind != "Null")
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_GamerPlayingGames, GBKT_BodyPartDef);
-                        }
-
-                        continue;
-                    }
-
-                    //MEDITATIVE
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Meditative)
-                    {
-                        var PawnsCurrentJoyKind = "Null";
-                        if (pawn.CurJobDef.joyKind != null)
-                        {
-                            PawnsCurrentJoyKind = pawn.CurJobDef.joyKind.ToString();
-                        }
-
-                        if (PawnsCurrentJoyKind == "Meditative")
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_RecentlyMeditatied, GBKT_BodyPartDef);
-                        }
-
-                        continue;
-                    }
-
-                    //Socialite
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Socialite)
-                    {
-                        var PawnsCurrentJoyKind = "Null";
-                        if (pawn.CurJobDef.joyKind != null)
-                        {
-                            PawnsCurrentJoyKind = pawn.CurJobDef.joyKind.ToString();
-                        }
-
-                        if (PawnsCurrentJoyKind == "Social")
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_RecentlySocialed, GBKT_BodyPartDef);
-                        }
-
-                        if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Socialite)
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_SocailiteBase, GBKT_BodyPartDef);
-                        }
-
-                        continue;
-                    }
-
-                    //COUCH POTATO
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_CouchPotato)
-                    {
-                        var PawnsCurrentJob = "Null";
-                        if (pawn.CurJobDef.ToString() != null)
-                        {
-                            PawnsCurrentJob = pawn.CurJobDef.ToString();
-                        }
-
-                        if (pawn.CurJobDef.joyKind != null)
-                        {
-                            PawnsCurrentJob = pawn.CurJobDef.ToString();
-                        }
-
-                        if (PawnsCurrentJob is "ViewArt" or "WatchTelevision")
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_CouchPotatoViewing, GBKT_BodyPartDef);
-                        }
-
-                        continue;
-                    }
-
-                    //FOODIE
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Foodie)
-                    {
-                        var PawnsCurrentJob = "Null";
-                        if (pawn.CurJobDef.ToString() != null)
-                        {
-                            PawnsCurrentJob = pawn.CurJobDef.ToString();
-                        }
-
-                        var PawnsCurrentJoyKind = "Null";
-                        if (pawn.CurJobDef.joyKind != null)
-                        {
-                            PawnsCurrentJoyKind = pawn.CurJobDef.joyKind.ToString();
-                        }
-
-                        if (PawnsCurrentJoyKind == "Gluttonous")
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_FoodieAteFood, GBKT_BodyPartDef);
-                        }
-
-                        if (pawn.needs.TryGetNeed(joyNeedDef) == null)
-                        {
-                            continue;
-                        }
-
-                        if (PawnsCurrentJob == "Ingest")
-                        {
-                            pawn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Gluttonous);
-                        }
-
-                        continue;
-                    }
-
-                    // GBKT_BattleThrill
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_BattleThrill)
-                    {
-                        var PawnsCurrentJob = "Null";
-                        if (pawn.CurJobDef.ToString() != null)
-                        {
-                            PawnsCurrentJob = pawn.CurJobDef.ToString();
-                        }
-
-                        if (PawnsCurrentJob is "AttackStatic" or "AttackMelee" or "SocialFight")
-                        {
-                            if (pawn.needs.TryGetNeed(joyNeedDef) != null)
-                            {
-                                pawn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Meditative);
-                            }
-
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_BattleThrillBattling, GBKT_BodyPartDef);
-                        }
-
-                        var PawnsCurrentJoyKind = "Null";
-                        if (pawn.CurJobDef.joyKind != null)
-                        {
-                            PawnsCurrentJoyKind = pawn.CurJobDef.joyKind.ToString();
-                        }
-
-                        if (PawnsCurrentJoyKind != "Null")
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_BattleThrillBattling, GBKT_BodyPartDef);
-                        }
-
-                        continue;
-                    }
-
-                    // SUN BATHER
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_SunBather)
-                    {
-                        var PawnsCurrentJob = "Null";
-                        if (pawn.CurJobDef.ToString() != null)
-                        {
-                            PawnsCurrentJob = pawn.CurJobDef.ToString();
-                        }
-
-                        if (PawnsCurrentJob == "GBKT_SunBathe")
-                        {
-                            _ = HediffGiverUtility.TryApply(pawn,
-                                GBTK_DefinitionTypes_Hediff.GBKT_SunBather_SoakedUpRays, GBKT_BodyPartDef);
-                        }
-
-                        continue;
-                    }
-
-                    //SNOW BUNNY
-                    if (traitDef != GBTK_DefinitionTypes_Traits.GBKT_SnowBunny)
-                    {
-                        continue;
-                    }
-
-                    if (!(pawn.Map.weatherManager.curWeather.snowRate > 0.0f))
-                    {
-                        continue;
-                    }
-
-                    var HowMuchSnowIsThere = pawn.Map.weatherManager.curWeather.snowRate;
-                    if (HowMuchSnowIsThere > 0.0f)
+                    if (PawnsCurrentJob == "GBKT_RunBackAndForth")
                     {
                         _ = HediffGiverUtility.TryApply(pawn,
-                            GBTK_DefinitionTypes_Hediff.GBKT_SnowBunny_In_The_Snow, GBKT_BodyPartDef);
+                            GBTK_DefinitionTypes_Hediff.GBKT_EnergizedEnergetic, GBKT_BodyPartDef);
+                    }
+
+                    continue;
+                }
+
+                //EXPLORER
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Explorer)
+                {
+                    var IsThePawnInThePlayerFaction = pawn.Faction.IsPlayer;
+                    var IsThePawnInThePlayerHome = pawn.Map.IsPlayerHome;
+                    if (IsThePawnInThePlayerFaction && IsThePawnInThePlayerHome)
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_ExplorerAtHome, GBKT_BodyPartDef);
+                    }
+
+                    if (!IsThePawnInThePlayerFaction && !IsThePawnInThePlayerHome)
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_ExplorerAtHome, GBKT_BodyPartDef);
+                    }
+
+                    if (IsThePawnInThePlayerFaction && !IsThePawnInThePlayerHome)
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_ExplorerNotAtHome, GBKT_BodyPartDef);
+                    }
+
+                    if (!IsThePawnInThePlayerFaction && IsThePawnInThePlayerHome)
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_ExplorerNotAtHome, GBKT_BodyPartDef);
+                    }
+
+                    continue;
+                }
+
+                //HOMEBODY
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Homebody)
+                {
+                    var IsThePawnInThePlayerFaction = pawn.Faction.IsPlayer;
+                    var IsThePawnInThePlayerHome = pawn.Map.IsPlayerHome;
+                    var PawnsCurrentJob = "Null";
+                    if (pawn.CurJobDef.ToString() != null)
+                    {
+                        PawnsCurrentJob = pawn.CurJobDef.ToString();
+                    }
+
+                    if (IsThePawnInThePlayerHome && IsThePawnInThePlayerFaction)
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_Homebody_AtHome, GBKT_BodyPartDef);
+                    }
+
+                    if (!IsThePawnInThePlayerFaction && !IsThePawnInThePlayerHome)
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_Homebody_AtHome, GBKT_BodyPartDef);
+                    }
+
+                    if (pawn.needs.TryGetNeed(joyNeedDef) == null)
+                    {
+                        continue;
+                    }
+
+                    var GBKT_JoyLevel = pawn.needs.joy.CurLevelPercentage;
+                    if (PawnsCurrentJob == "Clean" && GBKT_JoyLevel < 74.00f)
+                    {
+                        pawn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Meditative);
                     }
                 }
+
+                //DIRT LOVER
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_DirtLover)
+                {
+                    var IsPawnRoofed = pawn.Position.Roofed(pawn.Map);
+                    var WhatFilthDoesTileMake = "Null";
+                    if (pawn.Position.GetTerrain(pawn.Map).generatedFilth != null)
+                    {
+                        WhatFilthDoesTileMake = pawn.Position.GetTerrain(pawn.Map).generatedFilth.ToString();
+                    }
+
+                    var PawnsCurrentJob = "Null";
+                    if (pawn.CurJobDef.ToString() != null)
+                    {
+                        PawnsCurrentJob = pawn.CurJobDef.ToString();
+                    }
+
+                    var random = new Random();
+                    var randomNumber = random.Next(0, 5);
+                    if (randomNumber == 5)
+                    {
+                        if (WhatFilthDoesTileMake == "Filth_Dirt")
+                        {
+                            pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Dirt);
+                        }
+
+                        if (WhatFilthDoesTileMake == "Filth_Sand")
+                        {
+                            pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Sand);
+                        }
+                    }
+
+                    if (PawnsCurrentJob == "GBKT_EatDirt")
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_AteSomeDirt, GBKT_BodyPartDef);
+                    }
+
+                    if (PawnsCurrentJob == "GBKT_PlaceDirt" && IsPawnRoofed)
+                    {
+                        if (pawn.needs.TryGetNeed(joyNeedDef) != null)
+                        {
+                            pawn.needs.joy.GainJoy(10f, GBTK_DefinitionTypes_JoyDeff.Meditative);
+                        }
+
+                        pawn.ClearAllReservations();
+                        pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Dirt);
+                        pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Sand);
+                        pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Dirt);
+                        pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Sand);
+                        pawn.filth.GetType()
+                            .GetMethod("TryDropFilth", BindingFlags.Instance | BindingFlags.NonPublic)
+                            .Invoke(pawn.filth, null);
+                    }
+                }
+
+                //DREAMER
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Dreamer)
+                {
+                    if (pawn.needs.TryGetNeed(joyNeedDef) == null)
+                    {
+                        // No point to have the trait
+                        pawn.story.traits.RemoveTrait(pawn.story.traits.GetTrait(traitDef));
+                        continue;
+                    }
+
+                    var PawnsCurrentJob = "Null";
+                    if (pawn.CurJobDef.ToString() != null)
+                    {
+                        PawnsCurrentJob = pawn.CurJobDef.ToString();
+                    }
+
+                    var PawnsCurrentJoyLevel = pawn.needs.joy.CurLevelPercentage;
+                    var IsPawnInBed = pawn.InBed();
+                    //LayDown
+                    if (IsPawnInBed || PawnsCurrentJob == "LayDown")
+                    {
+                        pawn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Meditative);
+                    }
+
+                    if (PawnsCurrentJoyLevel is <= 0.80f and > 0.60f)
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_DreamerUnhappyI, GBKT_BodyPartDef);
+                    }
+
+                    if (PawnsCurrentJoyLevel is <= 0.60f and > 0.40f)
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_DreamerUnhappyII, GBKT_BodyPartDef);
+                    }
+
+                    if (PawnsCurrentJoyLevel is <= 0.40f and > 0.20f)
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_DreamerUnhappyIII, GBKT_BodyPartDef);
+                    }
+
+                    if (PawnsCurrentJoyLevel is <= 0.20f and >= 0.0f)
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_DreamerUnhappyIV, GBKT_BodyPartDef);
+                    }
+
+                    continue;
+                }
+
+                //GAMER
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Gamer)
+                {
+                    var PawnsCurrentJoyKind = "Null";
+                    if (pawn.CurJobDef.joyKind != null)
+                    {
+                        PawnsCurrentJoyKind = pawn.CurJobDef.joyKind.ToString();
+                    }
+
+                    if (PawnsCurrentJoyKind != "Null")
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_GamerPlayingGames, GBKT_BodyPartDef);
+                    }
+
+                    continue;
+                }
+
+                //MEDITATIVE
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Meditative)
+                {
+                    var PawnsCurrentJoyKind = "Null";
+                    if (pawn.CurJobDef.joyKind != null)
+                    {
+                        PawnsCurrentJoyKind = pawn.CurJobDef.joyKind.ToString();
+                    }
+
+                    if (PawnsCurrentJoyKind == "Meditative")
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_RecentlyMeditatied, GBKT_BodyPartDef);
+                    }
+
+                    continue;
+                }
+
+                //Socialite
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Socialite)
+                {
+                    var PawnsCurrentJoyKind = "Null";
+                    if (pawn.CurJobDef.joyKind != null)
+                    {
+                        PawnsCurrentJoyKind = pawn.CurJobDef.joyKind.ToString();
+                    }
+
+                    if (PawnsCurrentJoyKind == "Social")
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_RecentlySocialed, GBKT_BodyPartDef);
+                    }
+
+                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Socialite)
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_SocailiteBase, GBKT_BodyPartDef);
+                    }
+
+                    continue;
+                }
+
+                //COUCH POTATO
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_CouchPotato)
+                {
+                    var PawnsCurrentJob = "Null";
+                    if (pawn.CurJobDef.ToString() != null)
+                    {
+                        PawnsCurrentJob = pawn.CurJobDef.ToString();
+                    }
+
+                    if (pawn.CurJobDef.joyKind != null)
+                    {
+                        PawnsCurrentJob = pawn.CurJobDef.ToString();
+                    }
+
+                    if (PawnsCurrentJob is "ViewArt" or "WatchTelevision")
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_CouchPotatoViewing, GBKT_BodyPartDef);
+                    }
+
+                    continue;
+                }
+
+                //FOODIE
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_Foodie)
+                {
+                    var PawnsCurrentJob = "Null";
+                    if (pawn.CurJobDef.ToString() != null)
+                    {
+                        PawnsCurrentJob = pawn.CurJobDef.ToString();
+                    }
+
+                    var PawnsCurrentJoyKind = "Null";
+                    if (pawn.CurJobDef.joyKind != null)
+                    {
+                        PawnsCurrentJoyKind = pawn.CurJobDef.joyKind.ToString();
+                    }
+
+                    if (PawnsCurrentJoyKind == "Gluttonous")
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_FoodieAteFood, GBKT_BodyPartDef);
+                    }
+
+                    if (pawn.needs.TryGetNeed(joyNeedDef) == null)
+                    {
+                        continue;
+                    }
+
+                    if (PawnsCurrentJob == "Ingest")
+                    {
+                        pawn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Gluttonous);
+                    }
+
+                    continue;
+                }
+
+                // GBKT_BattleThrill
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_BattleThrill)
+                {
+                    var PawnsCurrentJob = "Null";
+                    if (pawn.CurJobDef.ToString() != null)
+                    {
+                        PawnsCurrentJob = pawn.CurJobDef.ToString();
+                    }
+
+                    if (PawnsCurrentJob is "AttackStatic" or "AttackMelee" or "SocialFight")
+                    {
+                        if (pawn.needs.TryGetNeed(joyNeedDef) != null)
+                        {
+                            pawn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Meditative);
+                        }
+
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_BattleThrillBattling, GBKT_BodyPartDef);
+                    }
+
+                    var PawnsCurrentJoyKind = "Null";
+                    if (pawn.CurJobDef.joyKind != null)
+                    {
+                        PawnsCurrentJoyKind = pawn.CurJobDef.joyKind.ToString();
+                    }
+
+                    if (PawnsCurrentJoyKind != "Null")
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_BattleThrillBattling, GBKT_BodyPartDef);
+                    }
+
+                    continue;
+                }
+
+                // SUN BATHER
+                if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_SunBather)
+                {
+                    var PawnsCurrentJob = "Null";
+                    if (pawn.CurJobDef.ToString() != null)
+                    {
+                        PawnsCurrentJob = pawn.CurJobDef.ToString();
+                    }
+
+                    if (PawnsCurrentJob == "GBKT_SunBathe")
+                    {
+                        _ = HediffGiverUtility.TryApply(pawn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_SunBather_SoakedUpRays, GBKT_BodyPartDef);
+                    }
+
+                    continue;
+                }
+
+                //SNOW BUNNY
+                if (traitDef != GBTK_DefinitionTypes_Traits.GBKT_SnowBunny)
+                {
+                    continue;
+                }
+
+                if (!(pawn.Map.weatherManager.curWeather.snowRate > 0.0f))
+                {
+                    continue;
+                }
+
+                var HowMuchSnowIsThere = pawn.Map.weatherManager.curWeather.snowRate;
+                if (HowMuchSnowIsThere > 0.0f)
+                {
+                    _ = HediffGiverUtility.TryApply(pawn,
+                        GBTK_DefinitionTypes_Hediff.GBKT_SnowBunny_In_The_Snow, GBKT_BodyPartDef);
+                }
             }
-        }
+        });
     }
 }

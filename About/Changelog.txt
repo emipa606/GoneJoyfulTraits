@@ -1,5 +1,9 @@
 # Changelog for GoneJoyfulTraits
 
+1.6.0 - Mod updated for 1.6 and passed autotests
+Used DeepL to update translations for ChineseSimplified, French, German
+
+
 1.5.3 - Fixed issue with traits trying to change needs that the pawn does not have
 
 

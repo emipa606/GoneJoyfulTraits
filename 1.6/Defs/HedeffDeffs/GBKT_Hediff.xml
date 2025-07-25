@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef Name="TraitBuffBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_TestHediff</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Test Hidiff</label>
+    <description>Test Hidiff</description>
+    <labelNoun>A Test Hediff</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_SkyGazerSeesSky</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Sky Gazer Sees Sky</label>
+    <description>Sky Gazer Sees Sky</description>
+    <labelNoun>A Sky Gazer Can See The Sky</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>4000</min>
+          <max>4000</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <restFallFactor>0.75</restFallFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_CareGiverVisited</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Visited By A Caregiver</label>
+    <description>Visited By A Caregiver</description>
+    <labelNoun>A Caregiver Visited</labelNoun>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>65000</min>
+          <max>65000</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.10</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_CareGiverTendedAPatient</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Care Giver Tending A Patient</label>
+    <description>Care Giver Tending A Patient</description>
+    <labelNoun>A Care Giver Tending A Patient</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <GlobalLearningFactor>1</GlobalLearningFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_Aquaphile_On_Water_Tile</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Aquaphile On Water Tile</label>
+    <description>Aquaphile On Water Tile</description>
+    <labelNoun>An Aquaphile Is On Water A Water Tile</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>40.00</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_Aquaphile_Is_Wet</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Aquaphile Is Wet</label>
+    <description>Aquaphile Is Wet</description>
+    <labelNoun>An Aquaphile Is Wet</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>6000</min>
+          <max>6000</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.20</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_Aquaphile_In_The_Rain</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Aquaphile In The Rain</label>
+    <description>Aquaphile In The Rain</description>
+    <labelNoun>An Aquaphile Is In The Rain</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>20</ShootingAccuracyPawn>
+          <MoveSpeed>0.60</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_EnergizedEnergetic</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Energetic Feels Energized</label>
+    <description>Energetic Feels Energized</description>
+    <labelNoun>An Energetic Feels Energized</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>60000</min>
+          <max>60000</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <postFactor>1.2</postFactor>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <postFactor>1.2</postFactor>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <postFactor>0.8</postFactor>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_BaseEnergetic</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Energetic Pawn</label>
+    <description>Energetic Pawn</description>
+    <labelNoun>An Energetic Pawn is Energetic</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>1000</min>
+          <max>1000</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <restFallFactor>0.75</restFallFactor>
+        <hungerRateFactorOffset>0.25</hungerRateFactorOffset>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_ExplorerAtHome</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Explorer Pawn At Home</label>
+    <description>Explorer Pawn At Home</description>
+    <labelNoun>Explorer Pawn At Home</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>-1.00</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_ExplorerNotAtHome</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Explorer Pawn Not Home</label>
+    <description>Explorer Pawn Not Home</description>
+    <labelNoun>Explorer Pawn Not Home</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>-0.60</MoveSpeed>
+          <WorkSpeedGlobal>0.45</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_Homebody_AtHome</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Homebody Pawn At Home</label>
+    <description>Homebody Pawn At Home</description>
+    <labelNoun>Explorer Pawn At Home</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.36</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_DreamerUnhappyI</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Dreamer Wants To Dream I</label>
+    <description>Dreamer Wants To Dream I</description>
+    <labelNoun>A Dreamer Wants To Dream</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <restFallFactor>1.5</restFallFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_DreamerUnhappyII</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Dreamer Wants To Dream II</label>
+    <description>Dreamer Wants To Dream II</description>
+    <labelNoun>A Dreamer Wants To Dream</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <restFallFactor>2.0</restFallFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_DreamerUnhappyIII</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Dreamer Wants To Dream III</label>
+    <description>Dreamer Wants To Dream III</description>
+    <labelNoun>A Dreamer Wants To Dream</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <restFallFactor>2.5</restFallFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_DreamerUnhappyIV</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Dreamer Wants To Dream IV</label>
+    <description>Dreamer Wants To Dream IV</description>
+    <labelNoun>A Dreamer Wants To Dream</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <restFallFactor>3.00</restFallFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_GamerPlayingGames</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Gamer Playing Games</label>
+    <description>Gamer Playing Games</description>
+    <labelNoun>A Gamer Is Playing A Game</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <GlobalLearningFactor>3.10</GlobalLearningFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_RecentlyMeditatied</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Meditative Meditated</label>
+    <description>Meditative Meditated</description>
+    <labelNoun>A Meditative Meditated</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>50000</min>
+          <max>50000</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>1.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_RecentlySocialed</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Socialite Was Social</label>
+    <description>Socialite Was Social</description>
+    <labelNoun>A Socialite Was Social</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>50000</min>
+          <max>50000</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <WorkSpeedGlobal>0.20</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_SocailiteBase</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Socialite Base Stat</label>
+    <description>Socialite Base Stat</description>
+    <labelNoun>A Socialite's Base Stat</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>6000</min>
+          <max>6000</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <opinionOfOthersFactor>1</opinionOfOthersFactor>
+        <statOffsets>
+          <SocialImpact>0.50</SocialImpact>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_CouchPotatoViewing</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Couch Potato Viewing</label>
+    <description>Couch Potato Viewing</description>
+    <labelNoun>A Couch Potato Is Viewing Something</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <hungerRateFactorOffset>-0.50</hungerRateFactorOffset>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_FoodieAteFood</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Foodie Ate Food</label>
+    <description>Foodie Ate Food</description>
+    <labelNoun>A Foodie Ate Food</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.18</MentalBreakThreshold>
+          <CookSpeed>0.50</CookSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_AteSomeDirt</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Ate Some Dirt</label>
+    <description>Ate Some Dirt</description>
+    <labelNoun>Ate Some Dirt</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>30000</min>
+          <max>30000</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <vomitMtbDays>0.5</vomitMtbDays>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_BattleThrillBattling</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Battle Thrill Pawn Battling</label>
+    <description>Battle Thrill Pawn Battling</description>
+    <labelNoun>A Battle Thrill Pawn Is Battling</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <GlobalLearningFactor>1</GlobalLearningFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_SunBather_SoakedUpRays</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Sun Bather Soaked Up Rays</label>
+    <description>Sun Bather Soaked Up Rays</description>
+    <labelNoun>A Sun Bather Soaked Up Rays</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>60000</min>
+          <max>60000</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Heat>0.25</ArmorRating_Heat>
+          <Flammability>-0.25</Flammability>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef ParentName="TraitBuffBase">
+    <defName>GBKT_SnowBunny_In_The_Snow</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Snow Bunny In The Snow</label>
+    <description>Snow Bunny In The Snow</description>
+    <labelNoun>A Snow Bunny Is In The Snow</labelNoun>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>100</min>
+          <max>100</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>20</ShootingAccuracyPawn>
+          <MoveSpeed>0.60</MoveSpeed>
+          <MentalBreakThreshold>-0.20</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

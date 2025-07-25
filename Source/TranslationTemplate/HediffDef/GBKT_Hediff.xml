@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Aquaphile In The Rain -->
+  <GBKT_Aquaphile_In_The_Rain.label>Aquaphile In The Rain</GBKT_Aquaphile_In_The_Rain.label>
+  <!-- EN: Aquaphile In The Rain -->
+  <GBKT_Aquaphile_In_The_Rain.description>Aquaphile In The Rain</GBKT_Aquaphile_In_The_Rain.description>
+  <!-- EN: An Aquaphile Is In The Rain -->
+  <GBKT_Aquaphile_In_The_Rain.labelNoun>An Aquaphile Is In The Rain</GBKT_Aquaphile_In_The_Rain.labelNoun>
+  <!-- EN: Aquaphile Is Wet -->
+  <GBKT_Aquaphile_Is_Wet.label>Aquaphile Is Wet</GBKT_Aquaphile_Is_Wet.label>
+  <!-- EN: Aquaphile Is Wet -->
+  <GBKT_Aquaphile_Is_Wet.description>Aquaphile Is Wet</GBKT_Aquaphile_Is_Wet.description>
+  <!-- EN: An Aquaphile Is Wet -->
+  <GBKT_Aquaphile_Is_Wet.labelNoun>An Aquaphile Is Wet</GBKT_Aquaphile_Is_Wet.labelNoun>
+  <!-- EN: Aquaphile On Water Tile -->
+  <GBKT_Aquaphile_On_Water_Tile.label>Aquaphile On Water Tile</GBKT_Aquaphile_On_Water_Tile.label>
+  <!-- EN: Aquaphile On Water Tile -->
+  <GBKT_Aquaphile_On_Water_Tile.description>Aquaphile On Water Tile</GBKT_Aquaphile_On_Water_Tile.description>
+  <!-- EN: An Aquaphile Is On Water A Water Tile -->
+  <GBKT_Aquaphile_On_Water_Tile.labelNoun>An Aquaphile Is On Water A Water Tile</GBKT_Aquaphile_On_Water_Tile.labelNoun>
+  <!-- EN: Ate Some Dirt -->
+  <GBKT_AteSomeDirt.label>Ate Some Dirt</GBKT_AteSomeDirt.label>
+  <!-- EN: Ate Some Dirt -->
+  <GBKT_AteSomeDirt.description>Ate Some Dirt</GBKT_AteSomeDirt.description>
+  <!-- EN: Ate Some Dirt -->
+  <GBKT_AteSomeDirt.labelNoun>Ate Some Dirt</GBKT_AteSomeDirt.labelNoun>
+  <!-- EN: Energetic Pawn -->
+  <GBKT_BaseEnergetic.label>Energetic Pawn</GBKT_BaseEnergetic.label>
+  <!-- EN: Energetic Pawn -->
+  <GBKT_BaseEnergetic.description>Energetic Pawn</GBKT_BaseEnergetic.description>
+  <!-- EN: An Energetic Pawn is Energetic -->
+  <GBKT_BaseEnergetic.labelNoun>An Energetic Pawn is Energetic</GBKT_BaseEnergetic.labelNoun>
+  <!-- EN: Battle Thrill Pawn Battling -->
+  <GBKT_BattleThrillBattling.label>Battle Thrill Pawn Battling</GBKT_BattleThrillBattling.label>
+  <!-- EN: Battle Thrill Pawn Battling -->
+  <GBKT_BattleThrillBattling.description>Battle Thrill Pawn Battling</GBKT_BattleThrillBattling.description>
+  <!-- EN: A Battle Thrill Pawn Is Battling -->
+  <GBKT_BattleThrillBattling.labelNoun>A Battle Thrill Pawn Is Battling</GBKT_BattleThrillBattling.labelNoun>
+  <!-- EN: Care Giver Tending A Patient -->
+  <GBKT_CareGiverTendedAPatient.label>Care Giver Tending A Patient</GBKT_CareGiverTendedAPatient.label>
+  <!-- EN: Care Giver Tending A Patient -->
+  <GBKT_CareGiverTendedAPatient.description>Care Giver Tending A Patient</GBKT_CareGiverTendedAPatient.description>
+  <!-- EN: A Care Giver Tending A Patient -->
+  <GBKT_CareGiverTendedAPatient.labelNoun>A Care Giver Tending A Patient</GBKT_CareGiverTendedAPatient.labelNoun>
+  <!-- EN: Visited By A Caregiver -->
+  <GBKT_CareGiverVisited.label>Visited By A Caregiver</GBKT_CareGiverVisited.label>
+  <!-- EN: Visited By A Caregiver -->
+  <GBKT_CareGiverVisited.description>Visited By A Caregiver</GBKT_CareGiverVisited.description>
+  <!-- EN: A Caregiver Visited -->
+  <GBKT_CareGiverVisited.labelNoun>A Caregiver Visited</GBKT_CareGiverVisited.labelNoun>
+  <!-- EN: Couch Potato Viewing -->
+  <GBKT_CouchPotatoViewing.label>Couch Potato Viewing</GBKT_CouchPotatoViewing.label>
+  <!-- EN: Couch Potato Viewing -->
+  <GBKT_CouchPotatoViewing.description>Couch Potato Viewing</GBKT_CouchPotatoViewing.description>
+  <!-- EN: A Couch Potato Is Viewing Something -->
+  <GBKT_CouchPotatoViewing.labelNoun>A Couch Potato Is Viewing Something</GBKT_CouchPotatoViewing.labelNoun>
+  <!-- EN: Dreamer Wants To Dream I -->
+  <GBKT_DreamerUnhappyI.label>Dreamer Wants To Dream I</GBKT_DreamerUnhappyI.label>
+  <!-- EN: Dreamer Wants To Dream I -->
+  <GBKT_DreamerUnhappyI.description>Dreamer Wants To Dream I</GBKT_DreamerUnhappyI.description>
+  <!-- EN: A Dreamer Wants To Dream -->
+  <GBKT_DreamerUnhappyI.labelNoun>A Dreamer Wants To Dream</GBKT_DreamerUnhappyI.labelNoun>
+  <!-- EN: Dreamer Wants To Dream II -->
+  <GBKT_DreamerUnhappyII.label>Dreamer Wants To Dream II</GBKT_DreamerUnhappyII.label>
+  <!-- EN: Dreamer Wants To Dream II -->
+  <GBKT_DreamerUnhappyII.description>Dreamer Wants To Dream II</GBKT_DreamerUnhappyII.description>
+  <!-- EN: A Dreamer Wants To Dream -->
+  <GBKT_DreamerUnhappyII.labelNoun>A Dreamer Wants To Dream</GBKT_DreamerUnhappyII.labelNoun>
+  <!-- EN: Dreamer Wants To Dream III -->
+  <GBKT_DreamerUnhappyIII.label>Dreamer Wants To Dream III</GBKT_DreamerUnhappyIII.label>
+  <!-- EN: Dreamer Wants To Dream III -->
+  <GBKT_DreamerUnhappyIII.description>Dreamer Wants To Dream III</GBKT_DreamerUnhappyIII.description>
+  <!-- EN: A Dreamer Wants To Dream -->
+  <GBKT_DreamerUnhappyIII.labelNoun>A Dreamer Wants To Dream</GBKT_DreamerUnhappyIII.labelNoun>
+  <!-- EN: Dreamer Wants To Dream IV -->
+  <GBKT_DreamerUnhappyIV.label>Dreamer Wants To Dream IV</GBKT_DreamerUnhappyIV.label>
+  <!-- EN: Dreamer Wants To Dream IV -->
+  <GBKT_DreamerUnhappyIV.description>Dreamer Wants To Dream IV</GBKT_DreamerUnhappyIV.description>
+  <!-- EN: A Dreamer Wants To Dream -->
+  <GBKT_DreamerUnhappyIV.labelNoun>A Dreamer Wants To Dream</GBKT_DreamerUnhappyIV.labelNoun>
+  <!-- EN: Energetic Feels Energized -->
+  <GBKT_EnergizedEnergetic.label>Energetic Feels Energized</GBKT_EnergizedEnergetic.label>
+  <!-- EN: Energetic Feels Energized -->
+  <GBKT_EnergizedEnergetic.description>Energetic Feels Energized</GBKT_EnergizedEnergetic.description>
+  <!-- EN: An Energetic Feels Energized -->
+  <GBKT_EnergizedEnergetic.labelNoun>An Energetic Feels Energized</GBKT_EnergizedEnergetic.labelNoun>
+  <!-- EN: Explorer Pawn At Home -->
+  <GBKT_ExplorerAtHome.label>Explorer Pawn At Home</GBKT_ExplorerAtHome.label>
+  <!-- EN: Explorer Pawn At Home -->
+  <GBKT_ExplorerAtHome.description>Explorer Pawn At Home</GBKT_ExplorerAtHome.description>
+  <!-- EN: Explorer Pawn At Home -->
+  <GBKT_ExplorerAtHome.labelNoun>Explorer Pawn At Home</GBKT_ExplorerAtHome.labelNoun>
+  <!-- EN: Explorer Pawn Not Home -->
+  <GBKT_ExplorerNotAtHome.label>Explorer Pawn Not Home</GBKT_ExplorerNotAtHome.label>
+  <!-- EN: Explorer Pawn Not Home -->
+  <GBKT_ExplorerNotAtHome.description>Explorer Pawn Not Home</GBKT_ExplorerNotAtHome.description>
+  <!-- EN: Explorer Pawn Not Home -->
+  <GBKT_ExplorerNotAtHome.labelNoun>Explorer Pawn Not Home</GBKT_ExplorerNotAtHome.labelNoun>
+  <!-- EN: Foodie Ate Food -->
+  <GBKT_FoodieAteFood.label>Foodie Ate Food</GBKT_FoodieAteFood.label>
+  <!-- EN: Foodie Ate Food -->
+  <GBKT_FoodieAteFood.description>Foodie Ate Food</GBKT_FoodieAteFood.description>
+  <!-- EN: A Foodie Ate Food -->
+  <GBKT_FoodieAteFood.labelNoun>A Foodie Ate Food</GBKT_FoodieAteFood.labelNoun>
+  <!-- EN: Gamer Playing Games -->
+  <GBKT_GamerPlayingGames.label>Gamer Playing Games</GBKT_GamerPlayingGames.label>
+  <!-- EN: Gamer Playing Games -->
+  <GBKT_GamerPlayingGames.description>Gamer Playing Games</GBKT_GamerPlayingGames.description>
+  <!-- EN: A Gamer Is Playing A Game -->
+  <GBKT_GamerPlayingGames.labelNoun>A Gamer Is Playing A Game</GBKT_GamerPlayingGames.labelNoun>
+  <!-- EN: Homebody Pawn At Home -->
+  <GBKT_Homebody_AtHome.label>Homebody Pawn At Home</GBKT_Homebody_AtHome.label>
+  <!-- EN: Homebody Pawn At Home -->
+  <GBKT_Homebody_AtHome.description>Homebody Pawn At Home</GBKT_Homebody_AtHome.description>
+  <!-- EN: Explorer Pawn At Home -->
+  <GBKT_Homebody_AtHome.labelNoun>Explorer Pawn At Home</GBKT_Homebody_AtHome.labelNoun>
+  <!-- EN: Meditative Meditated -->
+  <GBKT_RecentlyMeditatied.label>Meditative Meditated</GBKT_RecentlyMeditatied.label>
+  <!-- EN: Meditative Meditated -->
+  <GBKT_RecentlyMeditatied.description>Meditative Meditated</GBKT_RecentlyMeditatied.description>
+  <!-- EN: A Meditative Meditated -->
+  <GBKT_RecentlyMeditatied.labelNoun>A Meditative Meditated</GBKT_RecentlyMeditatied.labelNoun>
+  <!-- EN: Socialite Was Social -->
+  <GBKT_RecentlySocialed.label>Socialite Was Social</GBKT_RecentlySocialed.label>
+  <!-- EN: Socialite Was Social -->
+  <GBKT_RecentlySocialed.description>Socialite Was Social</GBKT_RecentlySocialed.description>
+  <!-- EN: A Socialite Was Social -->
+  <GBKT_RecentlySocialed.labelNoun>A Socialite Was Social</GBKT_RecentlySocialed.labelNoun>
+  <!-- EN: Sky Gazer Sees Sky -->
+  <GBKT_SkyGazerSeesSky.label>Sky Gazer Sees Sky</GBKT_SkyGazerSeesSky.label>
+  <!-- EN: Sky Gazer Sees Sky -->
+  <GBKT_SkyGazerSeesSky.description>Sky Gazer Sees Sky</GBKT_SkyGazerSeesSky.description>
+  <!-- EN: A Sky Gazer Can See The Sky -->
+  <GBKT_SkyGazerSeesSky.labelNoun>A Sky Gazer Can See The Sky</GBKT_SkyGazerSeesSky.labelNoun>
+  <!-- EN: Snow Bunny In The Snow -->
+  <GBKT_SnowBunny_In_The_Snow.label>Snow Bunny In The Snow</GBKT_SnowBunny_In_The_Snow.label>
+  <!-- EN: Snow Bunny In The Snow -->
+  <GBKT_SnowBunny_In_The_Snow.description>Snow Bunny In The Snow</GBKT_SnowBunny_In_The_Snow.description>
+  <!-- EN: A Snow Bunny Is In The Snow -->
+  <GBKT_SnowBunny_In_The_Snow.labelNoun>A Snow Bunny Is In The Snow</GBKT_SnowBunny_In_The_Snow.labelNoun>
+  <!-- EN: Socialite Base Stat -->
+  <GBKT_SocailiteBase.label>Socialite Base Stat</GBKT_SocailiteBase.label>
+  <!-- EN: Socialite Base Stat -->
+  <GBKT_SocailiteBase.description>Socialite Base Stat</GBKT_SocailiteBase.description>
+  <!-- EN: A Socialite's Base Stat -->
+  <GBKT_SocailiteBase.labelNoun>A Socialite's Base Stat</GBKT_SocailiteBase.labelNoun>
+  <!-- EN: Sun Bather Soaked Up Rays -->
+  <GBKT_SunBather_SoakedUpRays.label>Sun Bather Soaked Up Rays</GBKT_SunBather_SoakedUpRays.label>
+  <!-- EN: Sun Bather Soaked Up Rays -->
+  <GBKT_SunBather_SoakedUpRays.description>Sun Bather Soaked Up Rays</GBKT_SunBather_SoakedUpRays.description>
+  <!-- EN: A Sun Bather Soaked Up Rays -->
+  <GBKT_SunBather_SoakedUpRays.labelNoun>A Sun Bather Soaked Up Rays</GBKT_SunBather_SoakedUpRays.labelNoun>
+  <!-- EN: Test Hidiff -->
+  <GBKT_TestHediff.label>Test Hidiff</GBKT_TestHediff.label>
+  <!-- EN: Test Hidiff -->
+  <GBKT_TestHediff.description>Test Hidiff</GBKT_TestHediff.description>
+  <!-- EN: A Test Hediff -->
+  <GBKT_TestHediff.labelNoun>A Test Hediff</GBKT_TestHediff.labelNoun>
+</LanguageData>

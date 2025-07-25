@@ -10,27 +10,10 @@ public class ThoughtWorker_GBKT_HomebodyAtHome : ThoughtWorker
     {
         var IsThePawnInThePlayerFaction = pawn.Faction.IsPlayer;
         var IsThePawnInThePlayerHome = pawn.Map.IsPlayerHome;
-        if (!pawn.Spawned)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!pawn.RaceProps.Humanlike)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_Homebody))
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (IsThePawnInThePlayerFaction && IsThePawnInThePlayerHome == false)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (IsThePawnInThePlayerFaction == false && IsThePawnInThePlayerHome)
+        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
+            !pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_Homebody) ||
+            IsThePawnInThePlayerFaction && !IsThePawnInThePlayerHome ||
+            !IsThePawnInThePlayerFaction && IsThePawnInThePlayerHome)
         {
             return ThoughtState.Inactive;
         }

@@ -13,17 +13,8 @@ public class ThoughtWorker_GBKT_ExplorerAtHome : ThoughtWorker
         var IsThePawnInThePlayerHome = pawn.Map.IsPlayerHome;
         _ = pawn.IsPlayerControlledCaravanMember();
 
-        if (!pawn.Spawned)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!pawn.RaceProps.Humanlike)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_Explorer))
+        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
+            !pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_Explorer))
         {
             return ThoughtState.Inactive;
         }

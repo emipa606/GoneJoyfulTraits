@@ -14,17 +14,8 @@ public class ThoughtWorker_DirtLoverInDirt : ThoughtWorker
             WhatFilthDoesTileMake = pawn.Position.GetTerrain(pawn.Map).generatedFilth.ToString();
         }
 
-        if (!pawn.Spawned)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!pawn.RaceProps.Humanlike)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_DirtLover))
+        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
+            !pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_DirtLover))
         {
             return ThoughtState.Inactive;
         }

@@ -10,22 +10,8 @@ public class ThoughtWorker_GBKTSkyGazer : ThoughtWorker
     {
         var IsPawnRoofed = pawn.Position.Roofed(pawn.Map);
         var whatIsTheWeather = pawn.Map.weatherManager.curWeather.ToString();
-        if (!pawn.Spawned)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!pawn.RaceProps.Humanlike)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_SkyGazer))
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (IsPawnRoofed)
+        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
+            !pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_SkyGazer) || IsPawnRoofed)
         {
             return ThoughtState.Inactive;
         }
