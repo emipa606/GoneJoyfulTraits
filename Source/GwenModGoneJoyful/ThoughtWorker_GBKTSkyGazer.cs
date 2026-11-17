@@ -6,12 +6,12 @@ namespace GBKT_ThoughtWorkers;
 
 public class ThoughtWorker_GBKTSkyGazer : ThoughtWorker
 {
-    protected override ThoughtState CurrentStateInternal(Pawn pawn)
+    protected override ThoughtState CurrentStateInternal(Pawn p)
     {
-        var IsPawnRoofed = pawn.Position.Roofed(pawn.Map);
-        var whatIsTheWeather = pawn.Map.weatherManager.curWeather.ToString();
-        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
-            !pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_SkyGazer) || IsPawnRoofed)
+        var IsPawnRoofed = p.Position.Roofed(p.Map);
+        var whatIsTheWeather = p.Map.weatherManager.curWeather.ToString();
+        if (!p.Spawned || !p.RaceProps.Humanlike ||
+            !p.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_SkyGazer) || IsPawnRoofed)
         {
             return ThoughtState.Inactive;
         }

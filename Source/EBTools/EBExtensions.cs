@@ -4,11 +4,6 @@ namespace EBTools;
 
 public static class EBExtensions
 {
-    public static IEnumerable<T> OrEmptyIfNull<T>(this IEnumerable<T> source)
-    {
-        return source ?? [];
-    }
-
     public static List<T> OrEmptyIfNull<T>(this List<T> source)
     {
         return source ?? [];

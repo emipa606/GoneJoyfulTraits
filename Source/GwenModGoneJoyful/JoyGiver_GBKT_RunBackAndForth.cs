@@ -34,9 +34,7 @@ public class JoyGiver_GBKT_RunBackAndForth : JoyGiver
             targetQueueA = []
         };
         //can't figure out how to get hte pawn to wait so this has them sit for an extra tick. sadly not more than that.
-        //list[1] = list[1];
         list[1] = list[2];
-        //list[2] = list[0];
         list[3] = list[2];
         list[4] = list[0];
         list[5] = list[2];
@@ -53,12 +51,6 @@ public class JoyGiver_GBKT_RunBackAndForth : JoyGiver
         job.targetQueueA.Add(list[6]);
         job.targetQueueA.Add(list[7]);
         job.targetQueueA.Add(list[8]);
-        /* adding this made htem go back to the start again. its intersting. still nots rue how this translates to wandering only in water
-        for (int i = 1; i < list.Count; i++)
-        {
-            job.targetQueueA.Add(list[i]);
-        }
-        */
         job.locomotionUrgency = LocomotionUrgency.Sprint;
         return job;
 

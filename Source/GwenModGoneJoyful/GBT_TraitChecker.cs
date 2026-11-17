@@ -49,7 +49,6 @@ public class GBT_TraitChecker : WorldComponent
                 return;
             }
 
-            //Log.Error("this runs");
             foreach (var traitDef in GBKT_TraitDef)
             {
                 var hasTrait = pawn.story?.traits?.HasTrait(traitDef);
@@ -80,19 +79,15 @@ public class GBT_TraitChecker : WorldComponent
                 foreach (var VisitedPAwn in pawn.Map.mapPawns.AllPawnsSpawned)
                 {
                     var PawnsCurrentJob = pawn.CurJobDef.ToString();
-                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_CareGiver)
+                    if (traitDef == GBTK_DefinitionTypes_Traits.GBKT_CareGiver &&
+                        PawnsCurrentJob is "VisitSickPawn" or "TendPatient" or "FeedPatient" &&
+                        pawn.CurJob.targetA == VisitedPAwn)
                     {
-                        if (PawnsCurrentJob is "VisitSickPawn" or "TendPatient" or "FeedPatient")
+                        _ = HediffGiverUtility.TryApply(VisitedPAwn,
+                            GBTK_DefinitionTypes_Hediff.GBKT_CareGiverVisited, GBKT_BodyPartDef);
+                        if (VisitedPAwn.needs.TryGetNeed(joyNeedDef) != null)
                         {
-                            if (pawn.CurJob.targetA == VisitedPAwn)
-                            {
-                                _ = HediffGiverUtility.TryApply(VisitedPAwn,
-                                    GBTK_DefinitionTypes_Hediff.GBKT_CareGiverVisited, GBKT_BodyPartDef);
-                                if (VisitedPAwn.needs.TryGetNeed(joyNeedDef) != null)
-                                {
-                                    VisitedPAwn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Social);
-                                }
-                            }
+                            VisitedPAwn.needs.joy.GainJoy(0.00001f, GBTK_DefinitionTypes_JoyDeff.Social);
                         }
                     }
 
@@ -286,7 +281,7 @@ public class GBT_TraitChecker : WorldComponent
                         pawn.filth.GainFilth(GBTK_DefinitionTypes_ThingDeff.Filth_Sand);
                         pawn.filth.GetType()
                             .GetMethod("TryDropFilth", BindingFlags.Instance | BindingFlags.NonPublic)
-                            .Invoke(pawn.filth, null);
+                            ?.Invoke(pawn.filth, null);
                     }
                 }
 
@@ -296,7 +291,7 @@ public class GBT_TraitChecker : WorldComponent
                     if (pawn.needs.TryGetNeed(joyNeedDef) == null)
                     {
                         // No point to have the trait
-                        pawn.story.traits.RemoveTrait(pawn.story.traits.GetTrait(traitDef));
+                        pawn.story?.traits?.RemoveTrait(pawn.story.traits.GetTrait(traitDef));
                         continue;
                     }
 

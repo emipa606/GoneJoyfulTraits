@@ -25,12 +25,6 @@ public class JoyGiver_GoFindSun : JoyGiver
             return null;
         }
 
-        /*
-        if (GenLocalDate.DayPercent(pawn.Map) < 0.5f)
-        {
-            return null;
-        }
-        */
         if (!JoyUtility.EnjoyableOutsideNow(pawn))
         {
             return null;

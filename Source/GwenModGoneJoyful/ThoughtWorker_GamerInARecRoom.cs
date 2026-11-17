@@ -8,11 +8,11 @@ public class ThoughtWorker_GamerInARecRoom : ThoughtWorker
 {
     private static readonly RoomRoleDef recRoom = DefDatabase<RoomRoleDef>.GetNamedSilentFail("RecRoom");
 
-    protected override ThoughtState CurrentStateInternal(Pawn pawn)
+    protected override ThoughtState CurrentStateInternal(Pawn p)
     {
-        var room = pawn.GetRoom(RegionType.Set_Passable);
-        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
-            !pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_CouchPotato))
+        var room = p.GetRoom(RegionType.Set_Passable);
+        if (!p.Spawned || !p.RaceProps.Humanlike ||
+            !p.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_CouchPotato))
         {
             return ThoughtState.Inactive;
         }

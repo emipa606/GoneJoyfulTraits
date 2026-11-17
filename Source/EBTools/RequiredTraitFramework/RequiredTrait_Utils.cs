@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 
 namespace EBTools.RequiredTraitFramework;
 
-public class RequiredTrait_Utils
+public static class RequiredTrait_Utils
 {
     //class lists
     private static List<TraitDef> forbidden;
@@ -14,57 +15,10 @@ public class RequiredTrait_Utils
     private static List<TraitDef> dec;
 
 
-    private static bool HasAllTraitsFromList(Pawn pawn, List<TraitDef> traitDefs)
-    {
-        foreach (var td in traitDefs.OrEmptyIfNull())
-        {
-            if (!pawn.story.traits.HasTrait(td))
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
     // CORE FUNCTIONS
     private static bool HasRestrictedTrait(Pawn pawn, List<TraitDef> traitDefs)
     {
-        foreach (var td in traitDefs)
-        {
-            if (pawn.story.traits.HasTrait(td))
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private static bool HasAllRequiredTraits(Pawn pawn, List<TraitDef> traitDefs)
-    {
-        foreach (var td in traitDefs)
-        {
-            if (!pawn.story.traits.HasTrait(td))
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    private static bool HasOneRequiredTrait(Pawn pawn, List<TraitDef> traitDefs)
-    {
-        foreach (var td in traitDefs)
-        {
-            if (pawn.story.traits.HasTrait(td))
-            {
-                return true;
-            }
-        }
-
-        return false;
+        return traitDefs.Any(td => pawn.story.traits.HasTrait(td));
     }
 
 
@@ -103,24 +57,6 @@ public class RequiredTrait_Utils
         }
 
         return !hasForbidden && hasAll && hasOne;
-    }
-
-    /// <summary>
-    ///     Returns true if <paramref name="pawn" /> has no <paramref name="forbidden" /> traits, all
-    ///     <paramref name="reqAll" /> traits, and at least one <paramref name="reqOne" /> trait. Ignore this last requirement
-    ///     if <paramref name="ignoreRequiredOneTraits" /> is true.
-    /// </summary>
-    /// <param name="pawn"></param>
-    /// <param name="forbidden"></param>
-    /// <param name="reqAll"></param>
-    /// <param name="reqOne"></param>
-    /// <param name="ignoreRequiredOneTraits"></param>
-    /// <returns></returns>
-    public static bool IsAllowedByTraits(Pawn pawn, List<TraitDef> forbidden, List<TraitDef> reqAll,
-        List<TraitDef> reqOne, bool ignoreRequiredOneTraits)
-    {
-        return !HasRestrictedTrait(pawn, forbidden) && HasAllRequiredTraits(pawn, reqAll) &&
-               (ignoreRequiredOneTraits || HasOneRequiredTrait(pawn, reqOne));
     }
 
 
@@ -180,38 +116,33 @@ public class RequiredTrait_Utils
 
     /// <summary>
     ///     Gets the increase or decrease modifier for the GetChance() method based on the traits contained within
-    ///     <paramref name="pawn" />'s <paramref name="inc" /> and <paramref name="dec" /> <c>TraitDef</c> lists. Doubles the
-    ///     modifier per trait in <paramref name="inc" /> and halves per trait in <paramref name="dec" />.
+    ///     <paramref name="pawn" />'s <paramref name="defs" /> and <paramref name="traitDefs" /> <c>TraitDef</c> lists.
+    ///     Doubles the
+    ///     modifier per trait in <paramref name="defs" /> and halves per trait in <paramref name="traitDefs" />.
     /// </summary>
     /// <param name="pawn"></param>
-    /// <param name="inc"></param>
-    /// <param name="dec"></param>
+    /// <param name="defs"></param>
+    /// <param name="traitDefs"></param>
     /// <returns></returns>
-    public static float GetIncDecChanceModifierFromTraits(Pawn pawn, List<TraitDef> inc, List<TraitDef> dec)
+    private static float GetIncDecChanceModifierFromTraits(Pawn pawn, List<TraitDef> defs, List<TraitDef> traitDefs)
     {
         float mod = 1;
-        if (inc != null)
+        if (defs != null)
         {
-            foreach (var td in inc)
+            foreach (var td in defs.Where(trait => pawn.story.traits.HasTrait(trait)))
             {
-                if (pawn.story.traits.HasTrait(td))
-                {
-                    mod *= 2f;
-                }
+                mod *= 2f;
             }
         }
 
-        if (dec == null)
+        if (traitDefs == null)
         {
             return mod;
         }
 
-        foreach (var td in dec)
+        foreach (var td in traitDefs.Where(trait => pawn.story.traits.HasTrait(trait)))
         {
-            if (pawn.story.traits.HasTrait(td))
-            {
-                mod *= .5f;
-            }
+            mod *= .5f;
         }
 
         return mod;

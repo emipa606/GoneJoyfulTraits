@@ -85,12 +85,6 @@ public class JoyGiver_EnjoyWaterTiles : JoyGiver
         job.targetQueueA.Add(list[5]);
         job.targetQueueA.Add(list[6]);
         job.targetQueueA.Add(list[7]);
-        /* adding this made htem go back to the start again. its intersting. still nots rue how this translates to wandering only in water
-        for (int i = 1; i < list.Count; i++)
-        {
-            job.targetQueueA.Add(list[i]);
-        }
-        */
         job.locomotionUrgency = LocomotionUrgency.Jog;
         return job;
 

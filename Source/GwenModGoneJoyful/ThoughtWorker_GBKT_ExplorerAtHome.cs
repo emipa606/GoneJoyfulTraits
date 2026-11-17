@@ -7,14 +7,14 @@ namespace GBKT_ThoughtWorkers;
 
 public class ThoughtWorker_GBKT_ExplorerAtHome : ThoughtWorker
 {
-    protected override ThoughtState CurrentStateInternal(Pawn pawn)
+    protected override ThoughtState CurrentStateInternal(Pawn p)
     {
-        var IsThePawnInThePlayerFaction = pawn.Faction.IsPlayer;
-        var IsThePawnInThePlayerHome = pawn.Map.IsPlayerHome;
-        _ = pawn.IsPlayerControlledCaravanMember();
+        var IsThePawnInThePlayerFaction = p.Faction.IsPlayer;
+        var IsThePawnInThePlayerHome = p.Map.IsPlayerHome;
+        _ = p.IsPlayerControlledCaravanMember();
 
-        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
-            !pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_Explorer))
+        if (!p.Spawned || !p.RaceProps.Humanlike ||
+            !p.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_Explorer))
         {
             return ThoughtState.Inactive;
         }

@@ -7,4 +7,29 @@
   </Configurations>
   <Project Path="EBTools/EBTools.csproj" />
   <Project Path="GwenModGoneJoyful/GwenModGoneJoyful.csproj" />
+  <Folder Name="/XML/1.7/Defs/ThoughtDefs/">
+    <File Path="../1.7/Defs/ThoughtDefs/GBKT_Thoughts_Situation_Traits.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Patches/">
+    <File Path="../1.7/Patches/GwenJoyGiverDefPatchesExtensions.xml" />
+    <File Path="../1.7/Patches/GwenTraitThoughtPatches.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/HedeffDeffs/">
+    <File Path="../1.7/Defs/HedeffDeffs/GBKT_Hediff.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/Joy/">
+    <File Path="../1.7/Defs/Joy/GBKT_JoyGivers.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/JobDefs/">
+    <File Path="../1.7/Defs/JobDefs/GBKT_Jobs_Joy.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/TraitDefs/">
+    <File Path="../1.7/Defs/TraitDefs/GBK_CSharp_Traits.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/Text.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
 </Solution>

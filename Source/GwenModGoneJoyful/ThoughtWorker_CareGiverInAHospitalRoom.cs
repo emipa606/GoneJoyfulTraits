@@ -6,11 +6,11 @@ namespace GBKT_ThoughtWorkers;
 
 public class ThoughtWorker_CareGiverInAHospitalRoom : ThoughtWorker
 {
-    protected override ThoughtState CurrentStateInternal(Pawn pawn)
+    protected override ThoughtState CurrentStateInternal(Pawn p)
     {
-        var room = pawn.GetRoom(RegionType.Set_Passable);
-        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
-            !pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_CareGiver))
+        var room = p.GetRoom(RegionType.Set_Passable);
+        if (!p.Spawned || !p.RaceProps.Humanlike ||
+            !p.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_CareGiver))
         {
             return ThoughtState.Inactive;
         }

@@ -6,16 +6,16 @@ namespace GBKT_ThoughtWorkers;
 
 public class ThoughtWorker_DirtLoverInDirt : ThoughtWorker
 {
-    protected override ThoughtState CurrentStateInternal(Pawn pawn)
+    protected override ThoughtState CurrentStateInternal(Pawn p)
     {
         var WhatFilthDoesTileMake = "Null";
-        if (pawn.Position.GetTerrain(pawn.Map).generatedFilth != null)
+        if (p.Position.GetTerrain(p.Map).generatedFilth != null)
         {
-            WhatFilthDoesTileMake = pawn.Position.GetTerrain(pawn.Map).generatedFilth.ToString();
+            WhatFilthDoesTileMake = p.Position.GetTerrain(p.Map).generatedFilth.ToString();
         }
 
-        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
-            !pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_DirtLover))
+        if (!p.Spawned || !p.RaceProps.Humanlike ||
+            !p.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_DirtLover))
         {
             return ThoughtState.Inactive;
         }

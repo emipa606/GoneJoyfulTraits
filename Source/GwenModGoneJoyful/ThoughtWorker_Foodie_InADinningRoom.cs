@@ -8,11 +8,11 @@ public class ThoughtWorker_Foodie_InADinningRoom : ThoughtWorker
 {
     private static readonly RoomRoleDef diningRoom = DefDatabase<RoomRoleDef>.GetNamedSilentFail("DiningRoom");
 
-    protected override ThoughtState CurrentStateInternal(Pawn pawn)
+    protected override ThoughtState CurrentStateInternal(Pawn p)
     {
-        var room = pawn.GetRoom(RegionType.Set_Passable);
-        if (!pawn.Spawned || !pawn.RaceProps.Humanlike ||
-            !pawn.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_Foodie))
+        var room = p.GetRoom(RegionType.Set_Passable);
+        if (!p.Spawned || !p.RaceProps.Humanlike ||
+            !p.story.traits.HasTrait(GBTK_DefinitionTypes_Traits.GBKT_Foodie))
         {
             return ThoughtState.Inactive;
         }
